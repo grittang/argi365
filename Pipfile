@@ -6,6 +6,15 @@ name = "pypi"
 [packages]
 django = "==2.2.3"
 markdown = "*"
+pillow = "*"
+django-pure-pagination = "*"
+importlib-metadata = "*"
+Pillow = "*"
+pygments = "*"
+pytz = "*"
+sqlparse = "*"
+typing-extensions = "*"
+zipp = "*"
 
 [dev-packages]
 
