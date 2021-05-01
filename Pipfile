@@ -5,7 +5,15 @@ name = "pypi"
 
 [packages]
 django = "==2.2.3"
-markdown = "*"
+markdown = "==3.3.4"
+django-pure-pagination = "==0.3.0"
+pillow = "==8.2.0"
+importlib-metadata = "==4.0.1"
+pygments = "==2.8.1"
+pytz = "==2021.1"
+typing-extensions = "==3.7.4.3"
+zipp = "==3.4.1"
+gunicorn = "*"
 
 [dev-packages]
 
