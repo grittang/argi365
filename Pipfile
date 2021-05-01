@@ -9,14 +9,13 @@ markdown = "*"
 pillow = "*"
 django-pure-pagination = "*"
 importlib-metadata = "*"
-Pillow = "*"
 pygments = "*"
 pytz = "*"
-sqlparse = "*"
 typing-extensions = "*"
 zipp = "*"
 
 [dev-packages]
+fabric = "*"
 
 [requires]
 python_version = "3.6"

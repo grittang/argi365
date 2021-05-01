@@ -25,7 +25,7 @@ SECRET_KEY = '-)5xeircrhxk*(!ufwdq9=9bisby17*!b3lqka*ppm2gxnfa4!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.argi365.com']
 
 
 # Application definition
@@ -125,7 +125,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'f
 
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'static')
