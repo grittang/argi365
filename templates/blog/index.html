@@ -15,7 +15,7 @@
   {% for post in post_list %}
     <div class="bsingle__post mb-50">
       <div class="bsingle__post-thumb">
-        <img src="{{ post.avatar.url }}" alt="">
+        <img src="{{ post.avatar }}" alt="">
       </div>
       <div class="bsingle__content">
         <div class="meta-info">
@@ -51,6 +51,7 @@
             </nav> {% endcomment %}
 
     <nav>
+      {% if is_paginated %}
         <ul class="pagination">
           {% if page_obj.has_previous %}
             <li class="page-item"><a href="?{{ page_obj.previous_page_number.querystring }}"
@@ -76,7 +77,8 @@
             <li class="page-item"><span class="disabled next"> &rsaquo;&rsaquo;</span></li>
           {% endif %}
         </ul>
-      </nav>
+      {% endif %}
+    </nav>
   </div>
 
 {% endblock main %}
