@@ -12,6 +12,7 @@
 {% endblock breadcrumb %}
 
 {% block main %}
+  {}
   {% for post in post_list %}
     <div class="bsingle__post mb-50">
       <div class="bsingle__post-thumb">
@@ -37,48 +38,8 @@
     <div class="no-post">No post yet!</div>
   {% endfor %}
 
-  <div class="pagination-wrap mb-50">
-            {% comment %} <nav>
-              <ul class="pagination">
-                <li class="page-item"><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
-                <li class="page-item active"><a href="#">1</a></li>
-                <li class="page-item"><a href="#">2</a></li>
-                <li class="page-item"><a href="#">3</a></li>
-                <li class="page-item"><a href="#">...</a></li>
-                <li class="page-item"><a href="#">10</a></li>
-                <li class="page-item"><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
-              </ul>
-            </nav> {% endcomment %}
-
-    <nav>
-      {% if is_paginated %}
-        <ul class="pagination">
-          {% if page_obj.has_previous %}
-            <li class="page-item"><a href="?{{ page_obj.previous_page_number.querystring }}"
-                  class="prev">&lsaquo;&lsaquo; </a></li>
-          {% else %}
-            <li class="page-item"><span class="disabled prev">&lsaquo;&lsaquo; </span></li>
-          {% endif %}
-          {% for page in page_obj.pages %}
-            {% if page %}
-              {% ifequal page page_obj.number %}
-                <li  class="page-item active"><a href="#">{{ page }}</a></li>
-              {% else %}
-                <li class="page-item"><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
-              {% endifequal %}
-            {% else %}
-              ...
-            {% endif %}
-          {% endfor %}
-          {% if page_obj.has_next %}
-            <li class="page-item"><a href="?{{ page_obj.next_page_number.querystring }}" class="next"> &rsaquo;&rsaquo;</a>
-            </li>
-          {% else %}
-            <li class="page-item"><span class="disabled next"> &rsaquo;&rsaquo;</span></li>
-          {% endif %}
-        </ul>
-      {% endif %}
-    </nav>
-  </div>
+  {% if is_paginated %}
+    {{ page_obj.render }}
+  {% endif %}
 
 {% endblock main %}

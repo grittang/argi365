@@ -32,7 +32,9 @@ class Post(models.Model):
   created_time = models.DateTimeField('创建时间', auto_now_add=True)
   modified_time = models.DateTimeField('修改时间', auto_now=True)
   elapsed_time = models.IntegerField('阅读时长', default=5, blank=True)
-  avatar = models.URLField('标题图', max_length=350, blank=True)
+
+  # 使用图床显示标题图
+  avatar = models.URLField('标题图', max_length=400, blank=True)
 
   # 可以没有文章摘要，但默认情况下 CharField 要求我们必须存入数据，否则就会报错。
   excerpt = models.CharField('摘要', max_length=300, blank=True)
