@@ -727,7 +727,7 @@ display: none;
 .off-logo {display: none;}
 /* breadcrumb */
 .breadcrumb-area {
-	min-height: 400px;
+	min-height: 650px;
 	background-position: center;
 	background-size: cover;
     position: relative;
