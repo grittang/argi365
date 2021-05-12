@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load blog_extras %}
 
 {% block breadcrumb %}
-  <section class="breadcrumb-area d-flex align-items-center") style="background-image:url({% static 'blog/img/testimonial/test-bg2.jpg' %})">
+  <section class="breadcrumb-area d-flex align-items-center") style="background-image:url({% static 'blog/img/testimonial/test-bg3.jpg' %})">
     <div class="container">
       <div class="row">
       </div>
@@ -12,16 +12,18 @@
 {% endblock breadcrumb %}
 
 {% block main %}
-  {}
+  <!-- 文章列表 -->
   {% for post in post_list %}
     <div class="bsingle__post mb-50">
-      <div class="bsingle__post-thumb">
-        <img src="{{ post.avatar }}" alt="">
-      </div>
+      {% if post.avatar %}
+        <div class="bsingle__post-thumb">
+          <img src="{{ post.avatar }}" alt="avatar">
+        </div>
+      {% endif %}
       <div class="bsingle__content">
         <div class="meta-info">
             <ul>
-              <li><i class="far fa-calendar-alt"></i>  {{ post.created_time.date }}</li>
+              <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date }}</li>
               <li><i class="far fa-user"></i>by {{ post.author }}</li>
               <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
             </ul>
@@ -38,8 +40,13 @@
     <div class="no-post">No post yet!</div>
   {% endfor %}
 
-  {% if is_paginated %}
-    {{ page_obj.render }}
-  {% endif %}
-
 {% endblock main %}
+
+{% block toc %}
+
+  {% show_follow_me %}
+  {% show_categories %}
+  {% show_random_posts 2 %}
+  {% show_tags %}
+
+{% endblock toc %}

@@ -13,7 +13,7 @@ def show_recent_posts(context, num=5):
     }
 
 @register.inclusion_tag('blog/inclusions/_random_posts.html', takes_context=True)
-def show_random_posts(context, num=2):
+def show_random_posts(context, num=5):
     return {
         'random_post_list': Post.objects.all().order_by('?')[:num],
     }
@@ -33,3 +33,12 @@ def show_tags(context):
     return {
         'tag_list': tag_list,
     }
+
+@register.inclusion_tag('blog/inclusions/_follow_me.html', takes_context=True)
+def show_follow_me(context):
+    return None
+
+
+@register.inclusion_tag('blog/inclusions/_pagination.html', takes_context=True)
+def show_pagination(context):
+    return None

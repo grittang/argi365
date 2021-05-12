@@ -2,16 +2,16 @@
 {% load blog_extras %}
 
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="zh">
   <head>
-    <title>Renewal, Grit, Innovation</title>
+    <title>昂奇实验室</title>
 
     <!-- meta -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
+    <meta name="description" content="Activate your ARGI life!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'blog/img/argi365.ico' %}">
     <!-- Place favicon.ico in the root Internist, General Practitonery -->
 
     <!-- CSS here -->
@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{% static 'blog/css/meanmenu.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/typora-pie-argi.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/typora-plus.css' %}">
   </head>
       
   <body>
@@ -39,17 +41,17 @@
             <div class="row align-items-center">
               <div class="col-xl-2 col-lg-2">
                 <div class="logo2">
-                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/logo_150_FF.png' %}" alt="logo"></a>
+                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/logo_150_FONT.png' %}" alt="logo"></a>
                 </div>
               </div>
               <div class="col-xl-10 col-lg-10">                               
                 <div class="main-menu text-right pr-15">
                   <nav id="mobile-menu">
                     <ul>
-                      <li><a href="#">首页</a></li>
-                      <li><a href="#">博客</a></li>
-                      <li><a href="creating.html">创造</a></li>
-                      <li><a href="#">关于</a></li>
+                      <li><a href="{% url 'blog:index' %}">首页</a></li>
+                      <li><a href="">阅读</a></li>
+                      <li><a href="{% url 'blog:index' %}">博客</a></li>
+                      <li><a href="">关于</a></li>
                       </li>
                     </ul>
                   </nav>
@@ -83,6 +85,10 @@
               </main>
             </div>
             <!-- inner-blog-main-end -->
+            <!-- 分页器 -->
+            {% if is_paginated %}
+              {% show_pagination %}
+            {% endif %}
           </div>
         
           <!-- aside -->
@@ -90,19 +96,6 @@
             <aside>
               {% block toc %}
               {% endblock toc %}
-
-              <div class="widget mb-40">
-                <div class="widget-title text-center">
-                  <h4>关注我</h4>
-                </div>
-                <div class="widget-social text-center">
-                  <img src="{% static 'blog/img/blog/aside/wechat_code_250Y.png' %}" alt="WeChat" />
-                </div>
-              </div>
-
-              {% show_categories %}
-              {% show_random_posts %}
-              {% show_tags %}
             </aside>
           </div>
           <!-- aside-end -->
@@ -112,13 +105,13 @@
     </section>
     <!-- inner-blog-end -->
 
-    {% comment %} <!-- footer -->style="background-image:url({% static 'blog/img/testimonial/test-bg2.jpg' %})" {% endcomment %}
+    <!-- footer -->
     <footer class="footer-bg footer-p pt-50" >
       <div class="footer-top pb-50">
         <div class="container">
           <div class="row align-items-center text-center">
             <div class="col-12">                  
-              Copyright &copy; 2021. ARGI365 All rights reserved.
+              Copyright &copy; 2021. ARGI365.COM All rights reserved.
             </div>
           </div>
         </div>

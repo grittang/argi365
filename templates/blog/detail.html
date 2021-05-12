@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load blog_extras %}
 
 {% block breadcrumb %}
   <section class="breadcrumb-area d-flex align-items-center") style="background-image:url({% static 'blog/img/testimonial/test-bg-blank.jpg' %})">
@@ -12,9 +13,9 @@
             </div>
             <div class="meta-info">
               <ul>
-                <li><i class="far fa-calendar-alt"></i>  {{ post.created_time.date }}</li>
+                <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date }}</li>
                 <li><i class="far fa-user"></i>by {{ post.author }}</li>
-                <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }}</li>
+                <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
                 <li><i class="far fa-eye"></i>{{ post.views }}</li>
               </ul>
             </div>
@@ -27,30 +28,34 @@
 
 {% block main %}
   <div class="blog-details-wrap">
+    {% if post.avatar %}
     <div class="bsingle__post-thumb mb-30">
-      <img src="" alt="">
+      <img src="{{ post.avatar }}" alt="">
     </div>
+    {% endif %}
 
     <div class="details__content pb-50">
-      {{ post.body|safe }}
+      <div id="write">
+        {{ post.body|safe }}
+      </div>
       <div class="row">
         <div class="col-xl-6 col-md-7">
           <div class="post__tag">
             {% if post.tags.all %}
-              <h5>相关标签：</h5>
               <ul>
                 {% for tag in post.tags.all %}
                   <li><a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}</a></li>
                 {% empty %}
                   <div class="no-tag">暂无标签</div>
                 {% endfor %}
+              </ul>
             {% endif %}
           </div>
         </div>
       </div>
     </div>
     
-    <div class="posts_navigation pt-35 pb-35">
+    <!-- <div class="posts_navigation pt-35 pb-35">
       <div class="row align-items-center">
           <div class="col-xl-4 col-md-5">
               <div class="prev-link">
@@ -68,18 +73,21 @@
               </div>
           </div>
       </div>
-    </div>
+    </div> -->
 {% endblock main %}
 
 {% block toc %}
+  {% show_categories %}
+
   {% if post.toc %}
     <div class="widget mb-40 content-navigation">
       <div class="widget-title text-center">
         <h4>文章目录</h4>
       </div>
       <div class="toc">
-        {{ post.toc|safe }} 
+        <ol>{{ post.toc|safe }}</ol>
       </div>
     </div>
   {% endif %}
+
 {% endblock toc %}
