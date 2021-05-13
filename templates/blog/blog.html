@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load blog_extras %}
+
+
+<!-- breadcrumb-area -->
+{% block breadcrumb %}
+<section class="breadcrumb-area d-flex align-items-center" )
+  style="background-image:url({% static 'blog/img/testimonial/test-bg.jpg' %})">
+  <div class="container">
+    <div class="row">
+    </div>
+  </div>
+</section>
+{% endblock breadcrumb %}
+<!-- breadcrumb-area-end -->
+
+<!-- inner-blog -->
+{% block inner-blog %}
+  <section class="inner-blog pt-100 pb-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <!-- post-list -->
+          {% for post in post_list %}
+          <div class="bsingle__post mb-50">
+            {% if post.avatar %}
+            <div class="bsingle__post-thumb">
+              <img src="{{ post.avatar }}" alt="avatar">
+            </div>
+            {% endif %}
+            <div class="bsingle__content">
+              <div class="meta-info">
+                <ul>
+                  <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date|date:'n-d-Y' }}</li>
+                  <li><i class="far fa-user"></i>by {{ post.author }}</li>
+                  <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
+                  <li><i class="far fa-eye"></i>{{ post.views }}</li>
+                </ul>
+              </div>
+              <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+              <p>{{ post.excerpt }}...</p>
+              <div class="slider-btn">
+                <a href="{{ post.get_absolute_url }}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">继续阅读</a>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+            <div class="no-post">No post yet!</div>
+          {% endfor %}
+          <!-- post-list-end -->
+          {% show_pagination %}
+        </div>
+
+        <div class="col-lg-4">
+          <aside>
+            {% show_follow_me %}
+            {% show_categories %}
+            {% show_tags %}
+            {% show_recent_posts 7 %}
+            {% show_random_posts 7 %}
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock inner-blog %}
+<!-- inner-blog-end -->

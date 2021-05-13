@@ -5,7 +5,7 @@
 <html class="no-js" lang="zh">
   <head>
     <title>昂奇实验室</title>
-
+  
     <!-- meta -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'blog/img/argi365.ico' %}">
     <!-- Place favicon.ico in the root Internist, General Practitonery -->
-
+  
     <!-- CSS here -->
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/github.css' %}">
@@ -27,30 +27,30 @@
     <link rel="stylesheet" href="{% static 'blog/css/meanmenu.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/responsive-plus.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/typora-pie-argi.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/typora-plus.css' %}">
   </head>
       
   <body>
     <!-- header -->
-    <header class="header-area in-header">    
-  
+    <header class="header-area in-header">
       <div id="header-sticky" class="menu-area menu-area2">
         <div class="container">
           <div class="second-menu">
             <div class="row align-items-center">
               <div class="col-xl-2 col-lg-2">
                 <div class="logo2">
-                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/logo_150_FONT.png' %}" alt="logo"></a>
+                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/logo_150_AI.png' %}" alt="logo"></a>
                 </div>
               </div>
-              <div class="col-xl-10 col-lg-10">                               
+              <div class="col-xl-10 col-lg-10">
                 <div class="main-menu text-right pr-15">
                   <nav id="mobile-menu">
                     <ul>
                       <li><a href="{% url 'blog:index' %}">首页</a></li>
-                      <li><a href="">阅读</a></li>
-                      <li><a href="{% url 'blog:index' %}">博客</a></li>
+                      <li><a href="{% url 'blog:blog' %}">博客</a></li>
                       <li><a href="">关于</a></li>
                       </li>
                     </ul>
@@ -59,7 +59,7 @@
               </div>
               <div class="col-12">
                 <div class="mobile-menu"></div>
-              </div>        
+              </div>
             </div>
           </div>
         </div>
@@ -67,43 +67,23 @@
     </header>
     <!-- header-end -->
 
-    <!-- breadcrumb-area -->
-    {% block breadcrumb %}
-    {% endblock breadcrumb %}
-    <!-- breadcrumb-area-end -->
+    <!-- main-area -->
+    <main>
+    {% block main %}
 
-    <!-- inner-blog -->
-    <section class="inner-blog pt-100 pb-50">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <!-- inner-blog-main -->
-            <div>
-              <main>
-                {% block main %}
-                {% endblock main %}
-              </main>
-            </div>
-            <!-- inner-blog-main-end -->
-            <!-- 分页器 -->
-            {% if is_paginated %}
-              {% show_pagination %}
-            {% endif %}
-          </div>
-        
-          <!-- aside -->
-          <div class="col-lg-4">
-            <aside>
-              {% block toc %}
-              {% endblock toc %}
-            </aside>
-          </div>
-          <!-- aside-end -->
-          
-        </div>
-      </div>
-    </section>
-    <!-- inner-blog-end -->
+      <!-- breadcrumb-area -->
+      {% block breadcrumb %}
+      {% endblock breadcrumb %}
+      <!-- breadcrumb-area-end -->
+
+      <!-- inner-blog -->
+      {% block inner-blog %}
+      {% endblock inner-blog %}
+      <!-- inner-blog-end -->
+      
+    {% endblock main %}
+    </main>
+    <!-- main-area-end -->
 
     <!-- footer -->
     <footer class="footer-bg footer-p pt-50" >

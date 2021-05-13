@@ -33,9 +33,6 @@
   padding-top: 0px;!important
 }
 
-/* ----------------- Blockquotes --------------- */
-
-
 
 /* ----------------- 侧边栏 TOC --------------- */
 
@@ -64,6 +61,21 @@
   font-size: 14px;
 }
 
+
 .toc ul {
   margin-left: 4px;
+}
+
+
+/* ----------------- Details --------------- */
+
+.fa-eye:before,
+.fa-clock:before {
+  font-size: smaller;
+  color: #6d6d6d;
+}
+
+.widget__post-content h6 {
+  color: #333;
+  padding-right: 0px;
 }

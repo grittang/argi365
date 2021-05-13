@@ -13,9 +13,12 @@ import re
 class IndexView(PaginationMixin, ListView):
   model = Post
   template_name = 'blog/index.html'
-  context_object_name = 'post_list'
-  paginate_by = 7
 
+class BlogView(IndexView):
+  model = Post
+  template_name = 'blog/blog.html'
+  context_object_name = 'post_list'
+  paginate_by = 5
 
 class CategoryView(IndexView):
   def get_queryset(self):

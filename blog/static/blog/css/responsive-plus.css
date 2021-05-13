@@ -1,0 +1,13 @@
+@media only screen and (min-width: 480px) and (max-width: 991px) {
+  .breadcrumb-wrap .meta-info ul li {
+    font-size: 12px !important;
+    margin-right: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .breadcrumb-wrap .meta-info ul li {
+    font-size: 11px !important;
+    margin-right: 10px !important;
+  }
+}

@@ -2,51 +2,263 @@
 {% load static %}
 {% load blog_extras %}
 
-{% block breadcrumb %}
-  <section class="breadcrumb-area d-flex align-items-center") style="background-image:url({% static 'blog/img/testimonial/test-bg3.jpg' %})">
-    <div class="container">
-      <div class="row">
-      </div>
-    </div>
-  </section>
-{% endblock breadcrumb %}
 
 {% block main %}
-  <!-- 文章列表 -->
-  {% for post in post_list %}
-    <div class="bsingle__post mb-50">
-      {% if post.avatar %}
-        <div class="bsingle__post-thumb">
-          <img src="{{ post.avatar }}" alt="avatar">
+<!-- slider-area -->
+<section id="parallax2" class="slider-area fix p-relative">
+
+  <div class="slider-shape ss-two layer" data-depth="0.30">
+    <div class="per-text">
+      <h2>Revewal<span>Glory</span>Innovation</h2>
+    </div>
+  </div>
+
+  <div class="slider-shape ss-six layer" data-depth="0.15"><img src="{% static 'blog/img/bg/header-object.png' %}"
+      alt="shape"></div>
+  <div class="slider-shape ss-eight layer" data-depth="0.50"><img src="{% static 'blog/img/bg/header-img.png' %}"
+      alt="shape"></div>
+  <div class="slider-active2">
+    <div class="single-slider slider-bg d-flex align-items-center"
+      style="background-color: #19AA4B;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="slider-content s-slider-content text-left">
+              <h2 data-animation="fadeInUp" data-delay=".4s">激活 <br><span>成长 · 荣耀 · 创新</span></h2>
+              <p data-animation="fadeInUp" data-delay=".6s">每一天都要激活自己的潜力，成为更好的自己——终身成长、心存荣耀、探索创新。</p>
+              <div class="slider-btn mt-25">
+                <a href="#" id="header-btn" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">查看详情</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+          </div>
         </div>
-      {% endif %}
-      <div class="bsingle__content">
-        <div class="meta-info">
-            <ul>
-              <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date }}</li>
-              <li><i class="far fa-user"></i>by {{ post.author }}</li>
-              <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
-            </ul>
-        </div>
-        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt }}...</p>
-        <div class="slider-btn">   
-            <a href="{{ post.get_absolute_url }}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">继续阅读</a>				
-        </div> 
       </div>
     </div>
-    
-  {% empty %}
-    <div class="no-post">No post yet!</div>
-  {% endfor %}
+</section>
+<!-- slider-area-end -->
+
+<!-- about-area -->
+<section id="about" class="about-area about-p mt-80 pt-120 pb-120 p-relative">
+  <div class="parolx-text-right">About Me</div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="s-about-img p-relative">
+          <img src="{% static 'blog/img/bg/value_delivery.png' %}" alt="img">
+
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="about-content s-about-content pl-30">
+          <div class="section-title mb-50">
+            <h2>态度决定价值的保证</h2> <img src="{% static 'blog/img/bg/circle-line.png' %}" alt="circle">
+          </div>
+          <p>这是一个“三多”时代——信息噪音多，快餐文化多，认知偏差多。于是，本实验室制定了以下三个基本立足点：</p>
+          <p>过滤器：因为信息噪音多，所以高质量的信息过滤器就难能可贵。怎么定义质量高低？离源头越近的信息，质量越高；体系化越高的信息，质量越高；可通过多边验证的信息，质量越高；可操作性和可复制性越强的信息，质量也越高。为此，本实验室将依据上述评判标准进行内容输出。</p>
+          <p>纠偏仪：上面提到的“多边验证”，是以通识教育为基础的。这些跨学科模型是形成高质量决策的核心方法之一。本实验室将围绕这个基点做一些有益的探讨。</p>
+          <p>工具箱：上面提到的“清单”，是一种很经典的工具，还有哪些好用的工具呢？本实验室将逐次展开。</p>
+          <div class="slider-btn mt-15">
+            <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">查看详情</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- about-area-end -->
+
+<!-- services-area -->
+<section id="services" class="services-area services-bg pt-120 pb-120 p-relative"
+  style="background: #FBFFFA 0% 0% no-repeat padding-box;">
+  <div class="parolx-text-left">My Services</div>
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="about-content s-about-content pl-30">
+          <div class="section-title mb-50">
+            <h2>传递最具价值的信息</h2>
+            <img src="{% static 'blog/img/bg/circle-line.png' %}" alt="circle">
+          </div>
+          <p>Integer auctor est nec semper hendrerit. Etiam sollicitudin enim in urna commodo, in dapibus velit
+            elementum. Ut congue nisl sapien, vel ultricies nulla tincidunt vitae. Maecenas non ligula quis massa
+            consequat commodo eleifend ut velit.</p>
+          <p>Aenean eleifend est eget eros molestie pretium. Curabitur varius velit in est elementum consectetur. Mauris
+            in risus bibendum, laoreet ex at, lobortis risus. Nullam id massa eget ante finibus iaculis. Duis eget nisl
+            ipsum. Vivamus ipsum urna, tristique vel arcu nec, elementum congue est. Nullam vitae aliquet turpis.</p>
+
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="s-single-services text-center active">
+              <div class="services-icon">
+                <img src="img/bg/s-icon1.png" alt="img">
+              </div>
+              <div class="second-services-content">
+                <h5><a href="services-detail.html">Yoga</a></h5>
+                <p>Nam pellentesque, velit at sodales elementum, neque metus ultricies justo, eget varius diam justo ac
+                  ante.</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="s-single-services text-center">
+              <div class="services-icon">
+                <img src="img/bg/s-icon2.png" alt="img">
+              </div>
+              <div class="second-services-content">
+                <h5><a href="services-detail.html">Dance</a></h5>
+                <p>Nam pellentesque, velit at sodales elementum, neque metus ultricies justo, eget varius diam justo ac
+                  ante.</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="s-single-services text-center">
+              <div class="services-icon">
+                <img src="img/bg/s-icon3.png" alt="img">
+              </div>
+              <div class="second-services-content">
+                <h5><a href="services-detail.html">Fitness</a></h5>
+                <p>Nam pellentesque, velit at sodales elementum, neque metus ultricies justo, eget varius diam justo ac
+                  ante.</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="s-single-services text-center">
+              <div class="services-icon">
+                <img src="img/bg/s-icon4.png" alt="img">
+              </div>
+              <div class="second-services-content">
+                <h5><a href="services-detail.html">Health</a></h5>
+                <p>Nam pellentesque, velit at sodales elementum, neque metus ultricies justo, eget varius diam justo ac
+                  ante.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- services-area-end -->
+
+<!-- blog-area -->
+<section id="blog" class="blog-area  p-relative pt-120 pb-120 fix">
+  <div class="parolx-text-right">My Blog</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-8 col-lg-10">
+        <div class="section-title text-center mb-80">
+          <h2>内容承载价值</h2>
+          <img src="{% static 'blog/img/bg/circle-line.png' %}" alt="circle">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-12">
+        <div class="single-post single-post-box mb-30">
+          <div class="blog-thumb">
+            <a href="blog-details.html">
+              <img src="{% static 'blog/img/blog/blog_img01.jpg' %}" alt="img">
+            </a>
+            <div class="ct-link">
+              <a href="#"></a>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="b-meta mb-20">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <i class="far fa-calendar-alt"></i> 7 March, 2019
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <i class="fas fa-user"></i> By Grit
+                </div>
+              </div>
+            </div>
+            <h4><a href="blog-details.html">成长乃是败于越来越强大之物——兼谈对失败的复盘</a></h4>
+            <p>在书籍的扉页，周航放了一首里尔克的诗《观看的男人》，里面有一句“我们战胜的，都是渺小的，结果本身也使我们渺小……胜利不会对他发出邀请。他的成长乃是：成为卑贱的战败者，败于越来越强大之物。”</p>
+            <div class="blog-btn"><a href="#">查看详情<i class="fas fa-chevron-right"></i></a></div>
+
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="single-post single-post-box active mb-30">
+          <div class="blog-thumb">
+            <a href="blog-details.html">
+              <img src="{% static 'blog/img/blog/blog_img02.jpg' %}" alt="img">
+            </a>
+            <div class="ct-link">
+              <a href="#">FITNESS</a>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="b-meta mb-20">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <i class="far fa-calendar-alt"></i> 7 March, 2019
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <i class="fas fa-user"></i> By Grit
+                </div>
+              </div>
+            </div>
+            <h4><a href="blog-details.html">成为史蒂夫·乔布斯：如何跃迁为创新者</a></h4>
+            <p>创造力正是 Clayton Christensen 在完成对 25 位商界领袖和大约 3000 名创新人士的调研后，得出的答案。这项研究成果形成了《创新者的基因》这本书，它关注的是商业语境中个体的创造力。</p>
+            <div class="blog-btn"><a href="#">查看详情<i class="fas fa-chevron-right"></i></a></div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="single-post single-post-box mb-30">
+          <div class="blog-thumb">
+            <a href="blog-details.html">
+              <img src="{% static 'blog/img/blog/blog_img03.jpg' %}" alt="img">
+            </a>
+            <div class="ct-link">
+              <a href="#"></a>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="b-meta mb-20">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <i class="far fa-calendar-alt"></i> 7 March, 2019
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <i class="fas fa-user"></i> By Grit
+                </div>
+              </div>
+            </div>
+            <h4><a href="blog-details.html">不懂信息架构 (IA)，枉谈网站和软件设计</a></h4>
+            <p>本质上，IA 是信息大爆炸和社会分工进一步细化的产物。身处越来越庞杂的信息时代，每个人都面临的信息过载问题，迫使我们在尽可能短的时间内，准确地抽取目标信息，这就要求网站或应用程序高效地存储和呈现信息。</p>
+            <div class="blog-btn"><a href="#">查看详情<i class="fas fa-chevron-right"></i></a></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- blog-area-end -->
 
 {% endblock main %}
-
-{% block toc %}
-
-
-  {% show_categories %}
-  {% show_random_posts 2 %}
-  {% show_tags %}
-
-{% endblock toc %}
