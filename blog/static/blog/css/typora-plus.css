@@ -66,6 +66,9 @@
   margin-left: 4px;
 }
 
+.cat__list li a {
+  letter-spacing: 1px;
+}
 
 /* ----------------- Details --------------- */
 
@@ -79,3 +82,18 @@
   color: #333;
   padding-right: 0px;
 }
+
+.mean-container .mean-nav {
+  margin-top: 0px;
+}
+
+.menu-area {
+  background-color: #19AA4B;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.breadcrumb-area {
+  margin-top: 0px;
+}
+
