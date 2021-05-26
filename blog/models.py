@@ -6,8 +6,23 @@ from django.utils.html import strip_tags
 from PIL import Image
 import markdown
 
+class Channel(models.Model):
+  name = models.CharField(max_length=20, default='Your channel name here.')
+  desc = models.CharField(max_length=200, default='Your channel description here.')
+
+  class Meta:
+    verbose_name = '版块'
+    verbose_name_plural = verbose_name
+
+  def __str__(self):
+    return self.name
+
+  def get_object(self):
+    return self.get_object_or_404(pk=self.pk)
+
 class Category(models.Model):
-  name = models.CharField(max_length=100)
+  name = models.CharField(max_length=20)
+  channel = models.ForeignKey(Channel, verbose_name='版块', on_delete=models.CASCADE, default='insights')
 
   class Meta:
     verbose_name = '类别'
@@ -17,7 +32,7 @@ class Category(models.Model):
     return self.name
 
 class Tag(models.Model):
-  name = models.CharField(max_length=100)
+  name = models.CharField(max_length=20)
 
   class Meta:
     verbose_name = '标签'
@@ -40,7 +55,7 @@ class Post(models.Model):
   excerpt = models.CharField('摘要', max_length=300, blank=True)
 
   # 我们规定一篇文章只能对应一个分类，但是一个分类下可以有多篇文章
-  category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE)
+  category = models.ForeignKey(Category, verbose_name='类别', on_delete=models.CASCADE)
 
   # 对于标签来说，一篇文章可以有多个标签，同一个标签下也可能有多篇文章
   tags = models.ManyToManyField(Tag, verbose_name='标签', blank=True)

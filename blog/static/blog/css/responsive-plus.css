@@ -1,17 +1,48 @@
+@media only screen and (min-width: 1165px) and (max-width: 1440px) {
+  #home-header-bg {
+    min-height: 950px!important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .btn.ss-btn {
+    padding: 14px 45px!important;
+  }
+  .slider-bg {
+    min-height: 400px!important;
+  }
+  #home-header-bg {
+    min-height: 850px!important;
+  }
+
+}
+
 @media only screen and (max-width: 991px) {
   .breadcrumb-wrap .meta-info ul li {
     font-size: 12px !important;
     margin-right: 15px !important;
   }
-  .s-about-img img {
-    margin: 0px auto;
-  }
   .menu-area {
     padding-top: 35px;
-}
-
-@media only screen and (min-width: 767px) and (max-width: 991px) {
+  }
+  .slider-bg {
+    min-height: 400px!important;
+  }
+  #home-header-bg {
+    min-height: 750px!important;
+  }
   
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  /* .slider-content h2 {
+    margin-top: 20%;
+  } */
+  .s-about-img img {
+    width: initial;
+  }
+  #welcome-img-left img {
+    margin-bottom: 10%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -24,8 +55,8 @@
   .logo, .logo2, .logo3 {
     margin-top: 20px;
   }
-  .slider-content h2 {
-    margin-top: 70px;
+  .logo2 {
+    padding-left: 0px;
   }
   .mean-container a.meanmenu-reveal {
     border: 1px solid #fff;
@@ -35,12 +66,21 @@
   .mean-container a.meanmenu-reveal span {
     background: #fff;
   }
+  .slider-content h2 {
+    font-size: 5vh!important;
+  }
+  .s-slider-content p {
+    line-height: 1.8rem!important;
+  }
+  #about {
+    padding-top: 40px!important;
+  }
 }
 
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+/* @media only screen and (min-width: 480px) and (max-width: 767px) {
   
-}
+} */
 
 @media only screen and (max-width: 480px) {
   .breadcrumb-wrap .meta-info ul li {
@@ -53,9 +93,9 @@
   .bsingle__content .meta-info ul {
     margin-bottom: 15px;
   }
-  .slider-content h2 {
+  /* .slider-content h2 {
     font-size: 40px;
-  }
+  } */
   #about {
     margin-top: 0px;
     padding-top: 80px;

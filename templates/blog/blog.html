@@ -3,17 +3,31 @@
 {% load blog_extras %}
 
 
-<!-- breadcrumb-area -->
-{% block breadcrumb %}
-<section class="breadcrumb-area d-flex align-items-center" )
-  style="background-image:url({% static 'blog/img/testimonial/channel-bg-2.jpg' %})">
-  <div class="container">
-    <div class="row">
+<!-- slider-area -->
+{% block slider %}
+  <section id="parallax2" class="slider-area fix p-relative">
+  
+    <div class="slider-active2">
+      <div class="single-slider slider-bg d-flex align-items-center"
+        style="background-image:url({% static 'blog/img/bg/header-inner-bg.jpg' %}"); background-repeat: no-repeat; background-position: right;background-size: inherit;">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <div class="slider-content-channel s-slider-content-channel text-center mt-120">
+                <h2 data-animation="fadeInUp" data-delay=".4s">{{ channel.name }}</h2>
+                <p data-animation="fadeInUp" data-delay=".6s">{{ channel.desc }}</p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
-{% endblock breadcrumb %}
-<!-- breadcrumb-area-end -->
+  </section>
+{% endblock slider %}
+<!-- slider-area-end -->
 
 <!-- inner-blog -->
 {% block inner-blog %}
@@ -21,44 +35,64 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
+
           <!-- post-list -->
           {% for post in post_list %}
-          <div class="bsingle__post mb-50">
-            {% if post.avatar %}
-            <div class="bsingle__post-thumb">
-              <img src="{{ post.avatar }}" alt="avatar">
-            </div>
-            {% endif %}
-            <div class="bsingle__content">
-              <div class="meta-info">
-                <ul>
-                  <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date|date:'n-d-Y' }}</li>
-                  <li><i class="far fa-user"></i>by {{ post.author }}</li>
-                  <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
-                  <li><i class="far fa-eye"></i>{{ post.views }}</li>
-                </ul>
+            <div class="bsingle__post mb-50">
+              {% if post.avatar %}
+              <div class="bsingle__post-thumb">
+                <img src="{{ post.avatar }}" alt="avatar">
               </div>
-              <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-              <p>{{ post.excerpt }}...</p>
-              <div class="slider-btn">
-                <a href="{{ post.get_absolute_url }}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">继续阅读</a>
+              {% endif %}
+              <div class="bsingle__content">
+                <div class="meta-info">
+                  <ul>
+                    <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date|date:'n-d-Y' }}</li>
+                    <li><i class="far fa-user"></i>by {{ post.author }}</li>
+                    <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
+                    <li><i class="far fa-eye"></i>{{ post.views }}</li>
+                  </ul>
+                </div>
+                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                <p>{{ post.excerpt }}...</p>
+                <div class="slider-btn">
+                  <a href="{{ post.get_absolute_url }}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">继续阅读</a>
+                </div>
               </div>
             </div>
-          </div>
           {% empty %}
             <div class="no-post">No post yet!</div>
           {% endfor %}
           <!-- post-list-end -->
+          
+          <!-- pagination -->
           {% show_pagination %}
+          <!-- pagination-end -->
+
         </div>
 
         <div class="col-lg-4">
           <aside>
-            {% show_follow_me %}
-            {% show_categories %}
+            <!-- {% show_follow_me %} -->
+
+            <div class="widget mb-40">
+              <div class="widget-title text-center">
+                <h4>类别</h4>
+              </div>
+              <div class="cat__list">
+                <ul>
+                  {% for category in category_list %}
+                    <li>
+                      <a href="{% url 'blog:category' category.pk %}">{{ category.name }}<span class="post-count">{{ category.num_posts }}</span></a>
+                    </li>
+                  {% empty %}
+                    {{ categore.name }}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
             {% show_tags %}
-            {% show_recent_posts 7 %}
-            {% show_random_posts 7 %}
           </aside>
         </div>
       </div>

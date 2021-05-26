@@ -34,7 +34,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <div class="blog-details-wrap">
+        <div class="detail-wrap">
 
           {% if post.avatar %}
           <div class="bsingle__post-thumb mb-30">
@@ -67,9 +67,19 @@
 
       <div class="col-lg-4">
         <aside>
-          {% show_follow_me %}
-          {% show_categories %}
-          {% show_tags %}
+          {% if post.toc %}
+          <div class="widget widget-content">
+            <h3 class="widget-title">文章目录</h3>
+            <div class="toc">
+              <ul>
+                {{ post.toc|safe }}
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+          <!-- {% show_follow_me %} -->
+          <!-- {% show_categories %} -->
+          <!-- {% show_tags %} -->
         </aside>
       </div>
     </div>
@@ -77,3 +87,4 @@
 </section>
 {% endblock inner-blog %}
 <!-- inner-blog-end -->
+

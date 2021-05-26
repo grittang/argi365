@@ -255,7 +255,7 @@
 
 
 /* Tablet desktop :768px. */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 767px) and (max-width: 991px) {
         .services-area .col-lg-6:nth-child(1),.services-area .col-lg-6:nth-child(2),.services-area .col-lg-6:nth-child(3), .services-area .col-lg-6:nth-child(4) {
     margin-top: 30px;
 }
@@ -392,7 +392,6 @@
 }
 .slider-content h2 {
     font-size: 36px;
-    padding-right: 47%;
 }
     .s-slider-content p {
     font-size: 16px;
@@ -400,8 +399,8 @@
     padding-right: 50%;
 }
 .slider-bg {
-    min-height: 773px;
-    background-position: 535px 0 !important;
+    /* min-height: 773px; */
+    /* background-position: 535px 0 !important; */
 }
 .section-t h2 {
 	font-size: 150px;
@@ -769,7 +768,7 @@
 }
 
 .slider-bg2 {
-    min-height: 700px;
+    /* min-height: 700px; */
     position: relative;
     margin-top: -118px;
     z-index: 1;
@@ -954,8 +953,8 @@ border-bottom: none;
 margin-top: 0;
 }
 .slider-bg {
-	min-height: 700px;
-    background-position: -129px 105px !important;
+	/* min-height: 700px; */
+    /* background-position: -129px 105px !important; */
 }
 .slider-content h2 {
 	font-size: 48px;
@@ -1469,9 +1468,8 @@ right: 11%;
 /* Large Mobile :480px. */
 @media only screen and (min-width: 650px) and (max-width: 767px) {
     .slider-bg {
-    min-height: 700px;
-    background-position: 0px 105px !important;
-    background-size: cover !important;
+    /* min-height: 700px; */
+    /* background-size: cover !important; */
 }
 }
 /* Large Mobile :480px. */
@@ -1479,9 +1477,7 @@ right: 11%;
 .right-menu li .menu-search {
     display: none;
 }
-    .slider-bg {
-    background-position: 700px 0 !important;
-}
+
     .parolx-text-right,.parolx-text-left{
         display: none;
     }
@@ -1504,9 +1500,6 @@ right: 11%;
 }
 /* Large Mobile :480px. */
 @media only screen and (min-width: 1165px) and (max-width: 1440px) {
-    .slider-bg {
-    background-position: 880px 0 !important;
-}
     .parolx-text-right,.parolx-text-left{
         display: none;
     }
@@ -1517,9 +1510,6 @@ right: 11%;
 }
 /* Large Mobile :480px. */
 @media only screen and (min-width: 1440px) and (max-width: 1700px) {
-    .slider-bg {
-    background-position: 990px 0 !important;
-}
     .parolx-text-right,.parolx-text-left{
         display: none;
     }

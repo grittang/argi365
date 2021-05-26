@@ -4,7 +4,7 @@
 <!doctype html>
 <html class="no-js" lang="zh">
   <head>
-    <title>昂奇实验室：您的优质信息服务商</title>
+    <title>昂奇数创 | 创新您的数字化转型</title>
   
     <!-- meta -->
     <meta charset="utf-8">
@@ -42,7 +42,7 @@
             <div class="row align-items-center">
               <div class="col-xl-2 col-lg-2">
                 <div class="logo2">
-                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/logo_w.png' %}" alt="logo"></a>
+                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/logo_argi_w.png' %}" alt="logo"></a>
                 </div>
               </div>
               <div class="col-xl-10 col-lg-10">
@@ -50,8 +50,16 @@
                   <nav id="mobile-menu">
                     <ul>
                       <li><a href="{% url 'blog:index' %}">首页</a></li>
-                      <li><a href="{% url 'blog:blog' %}">博客</a></li>
-                      <li><a href="">关于</a></li>
+                      <!-- <li><a href="{% url 'blog:blog' %}">洞察</a></li>
+                      <li><a href="{% url 'blog:blog' %}">资源</a></li> -->
+                      {% for channel in channel_list %}
+                        <li>
+                          <a href="{% url 'blog:channel' channel.pk %}">{{ channel.name }}</a>
+                        </li>
+                      {% empty %}
+                        <div>No channel yet.</div>
+                      {% endfor %}
+                      <li><a href="{% url 'blog:about' %}">关于</a></li>
                       </li>
                     </ul>
                   </nav>
@@ -64,12 +72,18 @@
           </div>
         </div>
       </div>
+      
     </header>
     <!-- header-end -->
 
     <!-- main-area -->
     <main>
     {% block main %}
+      
+      <!-- slider-area -->
+      {% block slider %}
+      {% endblock slider %}
+      <!-- slider-area-end -->
 
       <!-- breadcrumb-area -->
       {% block breadcrumb %}
@@ -81,6 +95,11 @@
       {% endblock inner-blog %}
       <!-- inner-blog-end -->
       
+      <!-- more-than-area -->
+      {% block more-than %}
+      {% endblock more-than %}
+      <!-- more-than-area-end -->
+
     {% endblock main %}
     </main>
     <!-- main-area-end -->
@@ -91,7 +110,8 @@
         <div class="container">
           <div class="row align-items-center text-center">
             <div class="col-12">                  
-              Copyright &copy; 2021. 昂奇实验室 All rights reserved.
+              <p>Copyright &copy; 2021. 昂奇数创™ 版权所有，转载请联系 grittang@gmail.com</p>
+              <p><span>本站由 </span><img src="{% static 'blog/img/footer/f-upayun.png' %}" alter='又拍云'><span></span> 提供 CDN 加速/云存储服务</span></p>
             </div>
           </div>
         </div>
