@@ -23,7 +23,7 @@ class IndexView(BaseView):
 class BlogView(BaseView):
   """BlogView 视图将为所有基于 post 的视图提供 blog 模板"""
   template_name = 'blog/blog.html'
-  paginate_by = 1
+  paginate_by = 5
 
 class ChannelView(BlogView):
   # 下面这段代码将使导航栏只包含本 channel，而无法显示并跳转到其他 channel
@@ -56,8 +56,6 @@ class CategoryView(ChannelView):
     context['post_list'] = Post.objects.filter(category=queried_category)
     context['category'] = queried_category
     return context
-
-  # 侧边栏不出现“分类”
 
 
 class TagView(ChannelView):
@@ -98,6 +96,6 @@ class PostDetailView(DetailView):
 
     return post
 
-class AboutView(ChannelView):
+class AboutView(BlogView):
   template_name = 'blog/about.html'
 

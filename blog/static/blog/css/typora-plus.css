@@ -33,7 +33,7 @@
   padding-top: 0px;!important
 }
 
-/* --- HEADER-BG --- */
+/* --- SLIDER --- */
 .slider-content-channel {
   padding-top: 40px;
 }
@@ -48,6 +48,7 @@
   font-size: 2vh;
   margin-top: 20px;
   line-height: 3.5vh;
+  letter-spacing: .1vh;
 }
 
 
@@ -214,10 +215,6 @@ td:first-child {
 
 
 /* --- OTHERS --- */
-#welcome-img-left img {
-  max-width: 80%!important;
-  margin-left: 3vmin;
-}
 
 #s-about-img-right img {
   padding-left: 120px;

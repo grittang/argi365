@@ -293,9 +293,7 @@ margin-left: 0px;
 	line-height: 45px;
 	transition: .3s;
 }
-#scrollUp:hover {
-	background: #FF8A26;
-}
+
 /* 2. header */
 .header-top {
 	padding-top: 40px;
@@ -1022,7 +1020,8 @@ font-weight: 600;
 }
 #header-btn.btn.ss-btn {
   background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 3px 4px 15px #137d3849;
+  box-shadow: 3px 4px 15px #137d389f;
+  color: #333;
 }
 .btn.ss-btn  i {
     background: #fff;
@@ -1080,7 +1079,7 @@ right: 20% !important;
 .s-about-img img {
     width: inherit;
     max-width: inherit;
-    margin-left: -80px;
+    margin-left: 0;
 }
 .about-img {
 	margin-left: -50px;

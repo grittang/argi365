@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-)5xeircrhxk*(!ufwdq9=9bisby17*!b3lqka*ppm2gxnfa4!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.argi365.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.argi365.com', '121.41.194.229']
 
 
 # Application definition
