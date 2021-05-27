@@ -760,10 +760,10 @@ display: none;
 	content: ">";
 }
 .breadcrumb-title h2 a {
-	font-size: 60px;
+	font-size: 50px;
 	margin-bottom: 25px;
 	line-height: 1.25;
-  color: #19AA4B;
+  color: #212623;
   font-weight: bold;
 }
 
@@ -2725,9 +2725,9 @@ box-shadow: 3px 4px 15px #00000026;
 }
 .widget {
 padding: 35px 25px 35px 25px;
-border: 2px solid #f5f8fa;
+/* border: 2px solid #f5f8fa; */
 overflow: hidden;
-background: #f5f8fa;
+/* background: #f5f8fa; */
 }
 .widget-title {
   	margin-bottom: 40px;

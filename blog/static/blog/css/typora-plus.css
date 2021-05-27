@@ -33,6 +33,13 @@
   padding-top: 0px;!important
 }
 
+.bsingle__content {
+  border: 2px solid #ffffff;
+}
+.bsingle__content:hover {
+  background-color: #ffffff;
+}
+
 /* --- SLIDER --- */
 .slider-content-channel {
   padding-top: 40px;
@@ -214,6 +221,22 @@ td:first-child {
   width: 10.5rem;
 }
 
+/* --- POST-DETAILS --- */
+.inner-blog {
+  background-color: #FBFFFA;
+}
+
+.widget {
+  margin-left: 60px;
+  margin-right: 60px;
+  border-top: 1px solid #6d6d6d;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.widget:hover {
+  background-color: #fff;
+}
 
 /* --- OTHERS --- */
 

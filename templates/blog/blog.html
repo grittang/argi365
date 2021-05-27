@@ -34,6 +34,35 @@
   <section class="inner-blog pt-100 pb-50">
     <div class="container">
       <div class="row">
+
+        <!-- widget -->
+        <div class="col-lg-4">
+          <aside>
+            <!-- {% show_follow_me %} -->
+        
+            <div class="widget mb-40">
+              <div class="widget-title text-center">
+                <h4>类别</h4>
+              </div>
+              <div class="cat__list">
+                <ul>
+                  {% for category in category_list %}
+                  <li>
+                    <a href="{% url 'blog:category' category.pk %}">{{ category.name }}<span class="post-count">{{
+                        category.num_posts }}</span></a>
+                  </li>
+                  {% empty %}
+                  {{ categore.name }}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+        
+            {% show_tags %}
+          </aside>
+        </div>
+        <!-- widget-end -->
+
         <div class="col-lg-8">
 
           <!-- post-list -->
@@ -71,30 +100,7 @@
 
         </div>
 
-        <div class="col-lg-4">
-          <aside>
-            <!-- {% show_follow_me %} -->
-
-            <div class="widget mb-40">
-              <div class="widget-title text-center">
-                <h4>类别</h4>
-              </div>
-              <div class="cat__list">
-                <ul>
-                  {% for category in category_list %}
-                    <li>
-                      <a href="{% url 'blog:category' category.pk %}">{{ category.name }}<span class="post-count">{{ category.num_posts }}</span></a>
-                    </li>
-                  {% empty %}
-                    {{ categore.name }}
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-
-            {% show_tags %}
-          </aside>
-        </div>
+        
       </div>
     </div>
   </section>

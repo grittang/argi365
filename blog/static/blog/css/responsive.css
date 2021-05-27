@@ -1251,9 +1251,9 @@ right: 11%;
 	margin-bottom: 100px;
 	font-weight: 500;
 }
-.breadcrumb-title h2 a {
+/* .breadcrumb-title h2 a {
 	font-size: 25px !important;
-}
+} */
 .breadcrumb-title p {
 	padding: 0;
 	font-size: 15px;

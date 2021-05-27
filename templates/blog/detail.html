@@ -3,46 +3,60 @@
 {% load blog_extras %}
 
 
-{% block breadcrumb %}
-  <section class="breadcrumb-area d-flex align-items-center") style="background-image:url({% static 'blog/img/testimonial/test-bg-blank.jpg' %}); min-height:400px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12 col-lg-8">
-          <div class="breadcrumb-wrap text-center">
-            <div class="breadcrumb-title mb-30">
-              <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>                                   
-            </div>
-            <div class="meta-info">
-              <ul>
-                <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date|date:'n-d-Y' }}</li>
-                <li><i class="far fa-user"></i>by {{ post.author }}</li>
-                <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
-                <li><i class="far fa-eye"></i>{{ post.views }}</li>
-              </ul>
-            </div>
+<!-- inner-blog -->
+{% block inner-blog %}
+<section class="inner-blog b-details-p pb-50">
+  <div class="container">
+
+    <!-- post-header -->
+    <div class="row pt-120 mb-30">
+      <div class="col-xl-12 col-lg-8 mt-30">
+        <div class="breadcrumb-wrap text-center">
+          <div class="breadcrumb-title mb-30">
+            <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+          </div>
+          <div class="meta-info">
+            <ul>
+              <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date|date:'n-d-Y' }}</li>
+              <li><i class="far fa-user"></i>by {{ post.author }}</li>
+              <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
+              <li><i class="far fa-eye"></i>{{ post.views }}</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
-{% endblock breadcrumb %}
+    <!-- post-header-end -->
 
-
-<!-- inner-blog -->
-{% block inner-blog %}
-<section class="inner-blog b-details-p pt-100 pb-50">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="detail-wrap">
-
-          {% if post.avatar %}
-          <div class="bsingle__post-thumb mb-30">
-            <img src="{{ post.avatar }}" alt="">
+    <!-- post-body -->
+    <div class="row pt-120">
+      <div class="col-lg-4">
+        <aside>
+          {% if post.toc %}
+          <div class="widget widget-content">
+            <!-- <h3 class="widget-title">文章目录</h3> -->
+            <div class="toc">
+              <ul>
+                {{ post.toc|safe }}
+              </ul>
+            </div>
           </div>
           {% endif %}
-        
+          <!-- {% show_follow_me %} -->
+          <!-- {% show_categories %} -->
+          <!-- {% show_tags %} -->
+        </aside>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="detail-wrap">
+                 
           <div class="details__content pb-50">
+            <!-- {% if post.avatar %}
+            <div class="bsingle__post-thumb mb-30">
+              <img src="{{ post.avatar }}" alt="">
+            </div>
+            {% endif %} -->
             <div id="write">
               {{ post.body|safe }}
             </div>
@@ -64,24 +78,9 @@
           </div>
         </div>
       </div>
+      <!-- post-body-end -->
 
-      <div class="col-lg-4">
-        <aside>
-          {% if post.toc %}
-          <div class="widget widget-content">
-            <h3 class="widget-title">文章目录</h3>
-            <div class="toc">
-              <ul>
-                {{ post.toc|safe }}
-              </ul>
-            </div>
-          </div>
-          {% endif %}
-          <!-- {% show_follow_me %} -->
-          <!-- {% show_categories %} -->
-          <!-- {% show_tags %} -->
-        </aside>
-      </div>
+      
     </div>
   </div>
 </section>
