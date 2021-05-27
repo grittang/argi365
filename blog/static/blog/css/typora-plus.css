@@ -41,14 +41,15 @@
 .slider-content-channel h2 {
   color: #ffffff;
   font-size: 6.2vh;
+  letter-spacing: 20px;
 }
 
 .slider-content-channel p {
   color: #ffffff;
   font-size: 2vh;
-  margin-top: 20px;
+  margin: 30px 250px 0 250px;
   line-height: 3.5vh;
-  letter-spacing: .1vh;
+  letter-spacing: 1px;
 }
 
 
@@ -251,3 +252,6 @@ td:first-child {
   margin-left: 20px;
 }
 
+.slick-slide img {
+  min-width: 170px;
+}
