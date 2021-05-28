@@ -264,6 +264,17 @@ td:first-child {
     font-weight: 500;
 }
 
+/* --- FOOTER --- */
+.footer-bg {
+  background-color: #212623;
+}
+.footer-bg img {
+  margin-bottom: 4px;
+}
+
+#icp p {
+  color: #ffffff;
+}
 
 /* --- OTHERS --- */
 
@@ -275,13 +286,6 @@ td:first-child {
 
 #home-header-bg {
   min-height: 1080px;
-}
-
-.footer-bg {
-  background-color: #212623;
-}
-.footer-bg img {
-  margin-bottom: 4px;
 }
 
 #scrollUp {
