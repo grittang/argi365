@@ -17,20 +17,20 @@
           </div>
           <div class="meta-info">
             <ul>
-              <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date|date:'n-d-Y' }}</li>
-              <li><i class="far fa-user"></i>by {{ post.author }}</li>
+              <li><i class="far fa-calendar-alt"></i>{{ post.created_time.date|date:'n. d. Y' }}</li>
+              <li><i class="far fa-user"></i>{{ post.author }}</li>
               <li><i class="far fa-stopwatch"></i>{{ post.elapsed_time }} min</li>
               <li><i class="far fa-eye"></i>{{ post.views }}</li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
+    </div> sticky
     <!-- post-header-end -->
 
     <!-- post-body -->
     <div class="row pt-120">
-      <div class="col-lg-4">
+      <div class="col-lg-4 sticky">
         <aside>
           {% if post.toc %}
           <div class="widget widget-content">
@@ -42,9 +42,6 @@
             </div>
           </div>
           {% endif %}
-          <!-- {% show_follow_me %} -->
-          <!-- {% show_categories %} -->
-          <!-- {% show_tags %} -->
         </aside>
       </div>
 
@@ -52,14 +49,15 @@
         <div class="detail-wrap">
                  
           <div class="details__content pb-50">
-            <!-- {% if post.avatar %}
+            {% if post.avatar %}
             <div class="bsingle__post-thumb mb-30">
               <img src="{{ post.avatar }}" alt="">
             </div>
-            {% endif %} -->
+            {% endif %}
             <div id="write">
               {{ post.body|safe }}
             </div>
+            <div id="eof"><p> EOF </p></div>
             <div class="row">
               <div class="col-xl-6 col-md-7">
                 <div class="post__tag">
@@ -79,7 +77,6 @@
         </div>
       </div>
       <!-- post-body-end -->
-
       
     </div>
   </div>
