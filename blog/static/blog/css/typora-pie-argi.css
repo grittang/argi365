@@ -441,6 +441,19 @@ html {
   font-size: 2em;
   line-height: 1.2;
   text-align: center;
+  display: inline-block;
+  background:
+    linear-gradient(
+      90deg, 
+      #FF8A26 0%,
+      #19AA4B 50%,
+      #FF8A26 100%
+    )
+    left 
+    bottom
+    transparent 
+    no-repeat; 
+  background-size:100% 5px ;
 }
 
 #write h3 {
@@ -560,13 +573,13 @@ ol:last-child {
 /* ------------------- 标题装饰 ----------------- */
 
 /* --- 一级标题下边的装饰线，改成二级 --- */
-#write h2::after {
+/* #write h2::after {
   display: block;
   width: 125px;
   height: 4px;
   margin: 0.3em auto 0;
   content: '';
-  /* border-bottom: 2px dashed var(--main-6); */
+  border-bottom: 2px dashed var(--main-6);
   background:
     linear-gradient(
       90deg, 
@@ -579,10 +592,10 @@ ol:last-child {
     transparent 
     no-repeat; 
   background-size:100% 5px ;
-}
+} */
 
 #write h2:hover {
-  color: #19AA4B;
+  color: #FF8A26;
   font-weight: bold;
 }
 
@@ -653,10 +666,10 @@ blockquote::before {
   font-weight: 700;
   line-height: 1em;
   color: var(--main-6);
-  content: '“';
+  content: "\201C";
 }
 
-#write table {
+/* #write table {
   padding: 0;
   margin: 36px auto;
   word-break: initial;
@@ -702,7 +715,7 @@ thead {
 #write table thead th {
   text-align: center;
   background-color: #f2f2f2;
-}
+} */
 
 #write strong {
   padding: 0 1px;

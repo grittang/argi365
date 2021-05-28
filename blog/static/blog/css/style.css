@@ -767,9 +767,6 @@ display: none;
   font-weight: bold;
 }
 
-.breadcrumb-title h2:hover a {
-  color: #FF8A26;
-}
 
 .breadcrumb-title p {
 	margin-bottom: 0;

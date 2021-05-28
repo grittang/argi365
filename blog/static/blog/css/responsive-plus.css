@@ -5,6 +5,20 @@
 
 }
 
+@media only screen and (max-width: 1200px) {
+  .widget {
+    margin-left: 0px!important;
+  }
+  
+  .breadcrumb-wrap {
+    margin: 50px 0px 0!important;
+  }
+  .breadcrumb-title h2 a {
+    letter-spacing: 2px!important;
+    line-height: 7vh!important;
+  }
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .btn.ss-btn {
     padding: 14px 45px!important;
@@ -15,6 +29,10 @@
   #home-header-bg {
     min-height: 850px!important;
   }
+  .widget {
+    margin-left: 0px!important;
+  }
+}
 }
 
 @media only screen and (max-width: 991px) {
@@ -45,9 +63,25 @@
   .slider-content-channel p {
     margin: 30px 160px 0 160px!important;
   }
+  .col-lg-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .widget {
+    margin-right: 0px!important;
+  }
 }
 
 @media only screen and (max-width: 767px) {
+  .col-lg-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .widget {
+    margin-right: 0px!important;
+  }
   .bsingle__content ul, .pages-content ul {
     padding-left: 15px;
   }
@@ -60,7 +94,7 @@
   .mean-container a.meanmenu-reveal {
     border: 1px solid #fff;
     color: #fff;
-    /* margin-top: -55px; */
+    margin-top: -55px;
   }
   .mean-container a.meanmenu-reveal span {
     background: #fff;
@@ -74,7 +108,20 @@
   #about {
     padding-top: 80px!important;
   }
-  
+  .slider-content-channel p {
+    margin: 30px 50px 0!important;
+  }
+  .breadcrumb-wrap {
+    margin: 0!important;
+  }
+  .breadcrumb-title h2 a {
+    letter-spacing: 2px!important;
+    line-height: 5vh!important;
+    font-size: 40px;
+  }
+  .row-body {
+    padding-top: 40px;
+  }
 }
 
 @media only screen and (min-width: 651px) and (max-width: 766px) {
@@ -85,6 +132,55 @@
   .s-about-img img {
     width: inherit;
   }
+  /* .widget__tag ul li a {
+    padding: 9px 19px;
+  } */
+}
+
+@media only screen and (max-width: 650px) {
+  .row-body {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .row-body-content {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  
+  .col-lg-8 {
+    margin-top: 20px;
+    flex: initial;
+    max-width: initial;
+  }
+
+  .bsingle__post {
+    background-color: #FBFFFA;
+    margin-bottom: 70px;
+  }
+
+  .widget {
+    display: block;
+    margin: 0;
+    border: initial;
+    background: #FBFFFA;
+    padding: 50px 15px 40px!important;
+  }
+  .widget:first-child {
+    margin-top: 40px;
+    margin-bottom: 90px;
+    padding-bottom: 40px;
+  }
+
+  .widget-content {
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+    margin-bottom: 50px!important;
+  }
+
+  .cat__list li, .widget__tag ul li a {
+    margin: 0px 10px 20px;
+  }
+  
 }
 
 @media only screen and (min-width: 480px) and (max-width: 650px) {
