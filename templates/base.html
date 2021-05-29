@@ -15,8 +15,8 @@
     <!-- Place favicon.ico in the root Internist, General Practitonery -->
   
     <!-- CSS here -->
-    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/github.css' %}">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.css">
     <link rel="stylesheet" href="{% static 'blog/css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'blog/fontawesome/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/dripicons.css' %}">
@@ -25,11 +25,10 @@
     <link rel="stylesheet" href="{% static 'blog/css/default.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/meanmenu.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/responsive-plus.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/typora-pie-argi.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/typora-plus.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/responsive-plus.css' %}">
     
   </head>
       
@@ -61,6 +60,7 @@
                       {% endfor %}
                       <li><a href="{% url 'blog:about' %}">关于</a></li>
                       </li>
+                                            
                     </ul>
                   </nav>
                 </div>
@@ -112,7 +112,7 @@
             <div class="col-12">                  
               <p>Copyright &copy; 2021. 昂奇数创™ 版权所有，文章转载请联系 grittang@gmail.com</p>
               <p><span>本站由 </span><a href="https://www.upyun.com/"><img src="{% static 'blog/img/footer/f-upayun.png' %}" alter='又拍云'></a><span></span> 提供 CDN 加速/云存储服务</span></p>
-              <p><img src="{% static 'blog/img/footer/f-beian.png' %}" width="22" height="22"><a id="icp" href="https://beian.miit.gov.cn/#/Integrated/recordQuery" style="color: #ffff;"> 浙ICP备2021015348号-1</a></p>
+              <p><a class="icp" href="https://beian.miit.gov.cn/#/Integrated/recordQuery" style="color: #ffff;"> 浙ICP备2021015348号-1 </a><img src="{% static 'blog/img/footer/f-beian.png' %}" width="22" height="22"><a class="icp" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006577"> 浙公网安备33010502006577号</a></p>
             </div>
           </div>
         </div>
@@ -122,9 +122,10 @@
 
     <!-- JS here -->
     <script src="{% static 'blog/js/vendor/modernizr-3.5.0.min.js' %}"></script>
-    <script src="{% static 'blog/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!-- <script src="{% static 'blog/js/vendor/jquery-1.12.4.min.js' %}"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{% static 'blog/js/popper.min.js' %}"></script>
-    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="{% static 'blog/js/one-page-nav-min.js' %}"></script>
     <script src="{% static 'blog/js/jquery.meanmenu.min.js' %}"></script>
     <script src="{% static 'blog/js/slick.min.js' %}"></script>

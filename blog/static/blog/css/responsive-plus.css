@@ -1,5 +1,5 @@
 @media only screen and (min-width: 1165px) and (max-width: 1440px) {
-  #home-header-bg {
+  .silider-bg-full {
     min-height: 950px!important;
   }
 
@@ -26,7 +26,7 @@
   .slider-bg {
     min-height: 400px!important;
   }
-  #home-header-bg {
+  .silider-bg-full {
     min-height: 850px!important;
   }
   .widget {
@@ -46,7 +46,7 @@
   .slider-bg {
     min-height: 400px!important;
   }
-  #home-header-bg {
+  .silider-bg-full {
     min-height: 750px!important;
   }
   .logo2 {
@@ -59,6 +59,7 @@
     margin: 30px 60px 0 60px!important;
   }
 }
+
 @media only screen and (min-width: 767px) and (max-width: 991px) {
   .slider-content-channel p {
     margin: 30px 160px 0 160px!important;
@@ -70,6 +71,9 @@
   }
   .widget {
     margin-right: 0px!important;
+  }
+  .silider-bg-full {
+    min-height: 750px!important;
   }
 }
 
@@ -85,9 +89,6 @@
   .bsingle__content ul, .pages-content ul {
     padding-left: 15px;
   }
-  /* .logo, .logo2, .logo3 {
-    margin-top: 20px;
-  } */
   .logo2 {
     padding-left: 0px;
   }
@@ -98,6 +99,9 @@
   }
   .mean-container a.meanmenu-reveal span {
     background: #fff;
+  }
+  .silider-bg-full {
+    min-height: 750px!important;
   }
   .slider-content h2 {
     font-size: 5vh!important;
@@ -193,6 +197,12 @@
   }
 }
 
+@media only screen and (min-width: 480px) and (max-width: 550px) {
+  .mean-container a.meanmenu-reveal {
+    margin-top: -50px;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .breadcrumb-wrap .meta-info ul li {
     font-size: 11px !important;
@@ -224,6 +234,9 @@
   }
   .slider-content-channel p {
     margin: 30px 0 0 0!important;
+  }
+  .mean-container a.meanmenu-reveal {
+    margin-top: -50px;
   }
 }
 

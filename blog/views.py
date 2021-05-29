@@ -6,7 +6,6 @@ from django.db.models import Count
 from django.views.generic import ListView, DetailView
 from pure_pagination.mixins import PaginationMixin
 from .models import Channel, Post, Category, Tag
-from .forms import PostForm
 import markdown
 from markdown.extensions.toc import TocExtension
 import re
@@ -99,3 +98,19 @@ class PostDetailView(DetailView):
 class AboutView(BlogView):
   template_name = 'blog/about.html'
 
+
+def posts_create(request, category_id):
+  category = Category.objects.get(pk=category_id)
+
+  if request.method != 'POST':
+    form = PostForm()
+  else:
+    form = PostForm(data=request.POST)
+    if form.is_valid():
+      new_post = form.save(commit=False)
+      new_post.category = category
+      new_post.save()
+      return redirect('blog:category', category_id=category_id)
+
+  context = {'category':category, 'form':form}
+  return render(request, 'blog/posts_create.html', context)

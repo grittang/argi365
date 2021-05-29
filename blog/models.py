@@ -7,7 +7,15 @@ from PIL import Image
 import markdown
 
 class Channel(models.Model):
-  name = models.CharField(max_length=20, default='Your channel name here.')
+  CHANNEL_CHOICES = (
+    ('SaaS', 'SaaS'),
+    ('Insights', '洞察'),
+    ('Resources', '资源'),
+  )
+
+  # name = models.CharField(max_length=20, default='Your channel name here.')
+  # https://www.liujiangblog.com/course/django/104
+  name = models.CharField(max_length=32, choices=CHANNEL_CHOICES, default='洞察')
   desc = models.CharField(max_length=200, default='Your channel description here.')
 
   class Meta:
@@ -17,11 +25,8 @@ class Channel(models.Model):
   def __str__(self):
     return self.name
 
-  def get_object(self):
-    return self.get_object_or_404(pk=self.pk)
-
 class Category(models.Model):
-  name = models.CharField(max_length=20)
+  name = models.CharField(max_length=32, unique=True)
   channel = models.ForeignKey(Channel, verbose_name='版块', on_delete=models.CASCADE, default='insights')
 
   class Meta:
@@ -32,7 +37,7 @@ class Category(models.Model):
     return self.name
 
 class Tag(models.Model):
-  name = models.CharField(max_length=20)
+  name = models.CharField(max_length=20, unique=True)
 
   class Meta:
     verbose_name = '标签'
@@ -55,7 +60,7 @@ class Post(models.Model):
   excerpt = models.CharField('摘要', max_length=300, blank=True)
 
   # 我们规定一篇文章只能对应一个分类，但是一个分类下可以有多篇文章
-  category = models.ForeignKey(Category, verbose_name='类别', on_delete=models.CASCADE)
+  category = models.ForeignKey(Category, verbose_name='类别', on_delete=models.CASCADE, blank=False)
 
   # 对于标签来说，一篇文章可以有多个标签，同一个标签下也可能有多篇文章
   tags = models.ManyToManyField(Tag, verbose_name='标签', blank=True)
