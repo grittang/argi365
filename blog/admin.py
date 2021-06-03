@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Channel, Post, Category, Tag
 
 class PostAdmin(admin.ModelAdmin):
-  list_display = ['title', 'created_time', 'modified_time', 'category', 'avatar', 'author', 'elapsed_time']
-  fields = ['title', 'body', 'excerpt', 'category', 'tags', 'avatar', 'elapsed_time']
+  list_display = ['title', 'subtitle', 'created_time', 'modified_time', 'category', 'avatar', 'author', 'elapsed_time']
+  fields = ['title', 'subtitle', 'body', 'excerpt', 'category', 'tags', 'avatar', 'elapsed_time']
 
   def save_model(self, request, obj, form, change):
     obj.author = request.user

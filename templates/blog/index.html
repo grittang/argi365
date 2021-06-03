@@ -18,8 +18,7 @@
   <div class="slider-shape ss-eight layer" data-depth="0.50"><img src="{% static 'blog/img/bg/header-img.png' %}"
       alt="shape"></div> -->
   <div class="slider-active2">
-    <div class="single-slider slider-bg silider-bg-full d-flex align-items-center"
-      style="background-image: url({% static 'blog/img/bg/header-bg.jpg' %});">
+    <div class="single-slider slider-bg slider-bg-full d-flex align-items-center" style="background-image: url({% static 'blog/img/bg/header-bg.jpg' %});">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-7">
@@ -41,14 +40,13 @@
 <!-- slider-area-end -->
 
 <!-- about-area -->
-<section id="about" class="about-area about-p mt-80 pt-120 pb-120 p-relative">
-  <div class="parolx-text-right">About</div>
+<section id="about" class="about-area about-p pt-120 pb-120 p-relative">
+  <div class="parolx-text-right">About Me</div>
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="s-about-img p-relative">
+        <div class="s-about-img p-relative transition-img">
           <img src="{% static 'blog/img/testimonial/h-earth.png' %}" alt="img">
-
         </div>
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12">
@@ -56,17 +54,19 @@
           <div class="section-title mb-50">
             <h2>转型观察者及实践者</h2> <img src="{% static 'blog/img/bg/circle-line.png' %}" alt="circle">
           </div>
-          
           <p>传统行业的数字化转型怎么转？业内仍在探索，这种探索往往呈现出一定的盲目性和碎片化，有没有一个关于数字化转型的优质内容平台？</p>
-          <p>欢迎来到「昂奇数创」，一个深度原创的科技智库，专注于地产、建筑和泛家居行业的数字化转型和创新，并提供开阔的跨学科视角。旨在通过独立思考和深度观察，来剖析产业链上的公司、产品和数据，助您洞察行业变革的趋势和创新机会，并产生对应的转型思路。</p>
+          <p>
+            欢迎来到「昂奇数创」，一个深度原创的科技智库，专注于地产、建筑和泛家居行业的数字化转型和创新，并提供开阔的跨学科视角。旨在通过独立思考和深度观察，来剖析产业链上的公司、产品和数据，助您洞察行业变革的趋势和创新机会，并产生对应的转型思路。
+          </p>
           <p>「昂奇数创」期望成就您的卓越、成长和创新，即 ARGI365 = Activate your remarkability, growth and innovation everyday.</p>
           <div class="slider-btn mt-15">
             <a href="{% url 'blog:about' %}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">查看详情</a>
           </div>
         </div>
       </div>
-
     </div>
+
+  </div>
   </div>
 </section>
 <!-- about-area-end -->
@@ -163,29 +163,29 @@
     </div>
     <div class="row">
       <div class="col-lg-4 col-md-12">
-        <div class="single-post single-post-box mb-30">
+        <div class="single-post single-post-box active mb-30">
           <div class="blog-thumb">
             <a href="blog-details.html">
               <img src="{% static 'blog/img/blog/blog_img01.jpg' %}" alt="img">
             </a>
-            <!-- <div class="ct-link">
-              <a href="#"></a>
-            </div> -->
+            <div class="ct-link">
+              <a href="#">创新</a>
+            </div>
           </div>
           <div class="blog-content">
             <div class="b-meta mb-20">
               <div class="row">
                 <div class="col-lg-6 col-md-6">
-                  <i class="far fa-calendar-alt"></i> 7 March, 2019
+                  <i class="far fa-calendar-alt"></i>5. 29. 2021
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 text-right">
                   <i class="fas fa-user"></i>Grit
                 </div>
               </div>
             </div>
-            <h4><a href="blog-details.html">成长乃是败于越来越强大之物——兼谈对失败的复盘</a></h4>
+            <h4><a href="{% url 'blog:detail' 10 %}">成长乃是败于越来越强大之物——兼谈对失败的复盘</a></h4>
             <p>在书籍的扉页，周航放了一首里尔克的诗《观看的男人》，里面有一句“我们战胜的，都是渺小的，结果本身也使我们渺小……胜利不会对他发出邀请。他的成长乃是：成为卑贱的战败者，败于越来越强大之物。”</p>
-            <div class="blog-btn"><a href="#">查看详情<i class="fas fa-chevron-right"></i></a></div>
+            <div class="blog-btn"><a href="{% url 'blog:detail' 10 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
 
           </div>
 
@@ -198,53 +198,53 @@
             <a href="blog-details.html">
               <img src="{% static 'blog/img/blog/blog_img02.jpg' %}" alt="img">
             </a>
-            <!-- <div class="ct-link">
-              <a href="#">FITNESS</a>
-            </div> -->
+            <div class="ct-link">
+              <a href="{% url 'blog:detail' 16 %}">创新</a>
+            </div>
           </div>
           <div class="blog-content">
             <div class="b-meta mb-20">
               <div class="row">
                 <div class="col-lg-6 col-md-6">
-                  <i class="far fa-calendar-alt"></i> 7 March, 2019
+                  <i class="far fa-calendar-alt"></i>6. 2. 2021
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 text-right">
                   <i class="fas fa-user"></i> Grit
                 </div>
               </div>
             </div>
-            <h4><a href="blog-details.html">成为史蒂夫·乔布斯：如何跃迁为创新者</a></h4>
+            <h4><a href="{% url 'blog:detail' 16 %}">成为史蒂夫·乔布斯：如何跃迁为创新者</a></h4>
             <p>创造力正是 Clayton Christensen 在完成对 25 位商界领袖和大约 3000 名创新人士的调研后，得出的答案。这项研究成果形成了《创新者的基因》这本书，它关注的是商业语境中个体的创造力。</p>
-            <div class="blog-btn"><a href="#">查看详情<i class="fas fa-chevron-right"></i></a></div>
+            <div class="blog-btn"><a href="{% url 'blog:detail' 16 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
           </div>
 
 
         </div>
       </div>
       <div class="col-lg-4 col-md-12">
-        <div class="single-post single-post-box mb-30">
+        <div class="single-post single-post-box active mb-30">
           <div class="blog-thumb">
             <a href="blog-details.html">
               <img src="{% static 'blog/img/blog/blog_img03.jpg' %}" alt="img">
             </a>
-            <!-- <div class="ct-link">
-              <a href="#"></a>
-            </div> -->
+            <div class="ct-link">
+              <a href="{% url 'blog:detail' 8 %}">产品</a>
+            </div>
           </div>
           <div class="blog-content">
             <div class="b-meta mb-20">
               <div class="row">
                 <div class="col-lg-6 col-md-6">
-                  <i class="far fa-calendar-alt"></i> 7 March, 2019
+                  <i class="far fa-calendar-alt"></i>5. 28. 2021
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 text-right">
                   <i class="fas fa-user"></i>Grit
                 </div>
               </div>
             </div>
-            <h4><a href="blog-details.html">不懂信息架构 (IA)，枉谈网站和软件设计</a></h4>
+            <h4><a href="{% url 'blog:detail' 8 %}">不懂信息架构 (IA)，枉谈网站和软件设计</a></h4>
             <p>本质上，IA 是信息大爆炸和社会分工进一步细化的产物。身处越来越庞杂的信息时代，每个人都面临的信息过载问题，迫使我们在尽可能短的时间内，准确地抽取目标信息，这就要求网站或应用程序高效地存储和呈现信息。</p>
-            <div class="blog-btn"><a href="#">查看详情<i class="fas fa-chevron-right"></i></a></div>
+            <div class="blog-btn"><a href="{% url 'blog:detail' 8 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
           </div>
 
         </div>
@@ -272,10 +272,11 @@
       <div class="col-lg-3 col-md-6 mb-30">
         <div class="s-single-services text-center active">
           <div class="services-icon">
+            <a href="{% url 'blog:category' 7 %}">
             <img src="{% static 'blog/img/bg/s-saas.png' %}" alt="img">
           </div>
           <div class="second-services-content">
-            <h5><a>工具</a></h5>
+            <h5><a href="{% url 'blog:category' 7 %}">工具</a></h5>
             <p>介绍各种利器，一来提高您的决策质量，助您进行创新发现；二来提高您的生产效率。例如商业模式画布、Design Thinking、Git 和贝叶斯概率模型……</p>
           </div>
         </div>

@@ -9,13 +9,21 @@
   
     <div class="slider-active2">
       <div class="single-slider slider-bg d-flex align-items-center"
-        style="background-image:url({% static 'blog/img/bg/header-inner-bg.jpg' %}"); background-repeat: no-repeat; background-position: right;background-size: inherit;">
+        style="background-image:url({% static 'blog/img/bg/header-inner-bg.jpg' %}"); background-repeat: no-repeat; background-position: right;background-size: inherit;>
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-12">
               <div class="slider-content-channel s-slider-content-channel text-center mt-120">
-                <h2 data-animation="fadeInUp" data-delay=".4s">{{ channel.name }}</h2>
-                <p data-animation="fadeInUp" data-delay=".6s">{{ channel.desc }}</p>
+                {% if channel %}
+                  <h2 data-animation="fadeInUp" data-delay=".4s">{{ channel.name }}</h2>
+                  <p data-animation="fadeInUp" data-delay=".6s">{{ channel.desc }}</p>
+                {% elif category %}
+                  <h2 data-animation="fadeInUp" data-delay=".6s" class="breadcrumb-cate">{{ category.name }}</h2>
+                  <p data-animation="fadeInUp" data-delay=".6s">（子类别）</p>
+                {% elif tag %}
+                  <h2 data-animation="fadeInUp" data-delay=".6s" class="breadcrumb-tag">{{ tag.name }}</h2>
+                  <p data-animation="fadeInUp" data-delay=".6s">（标签）</p>
+                {% endif %}
               </div>
             </div>
             <div class="col-lg-5">
@@ -39,7 +47,10 @@
         <div class="col-lg-4">
           <aside>
             <!-- {% show_follow_me %} -->
-        
+
+            {% show_recent_posts %}
+            
+            {% if category_list %}
             <div class="widget mb-40">
               <div class="widget-title text-center">
                 <h4>类别</h4>
@@ -50,13 +61,14 @@
                   <li>
                     <a href="{% url 'blog:category' category.pk %}">{{ category.name }}<span class="post-count">({{ category.num_posts }})</span></a>
                   </li>
-                  {% empty %}
-                  {{ categore.name }}
+                  {%empty %}
+                    No category yet.
                   {% endfor %}
                 </ul>
               </div>
             </div>
-        
+            {% endif %}
+            
             {% show_tags %}
           </aside>
         </div>
@@ -68,7 +80,7 @@
           {% for post in post_list %}
             <div class="bsingle__post mb-50">
               {% if post.avatar %}
-              <div class="bsingle__post-thumb">
+              <div class="bsingle__post-thumb transition-img">
                 <img src="{{ post.avatar }}" alt="avatar">
               </div>
               {% endif %}
@@ -89,7 +101,7 @@
               </div>
             </div>
           {% empty %}
-            <div class="no-post">No post yet!</div>
+            <div class="no-post">No post yet.</div>
           {% endfor %}
           <!-- post-list-end -->
           

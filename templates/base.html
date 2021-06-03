@@ -15,13 +15,17 @@
     <!-- Place favicon.ico in the root Internist, General Practitonery -->
   
     <!-- CSS here -->
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/github-markdown-css/4.0.0/github-markdown.css">
-    <link rel="stylesheet" href="{% static 'blog/css/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/fontawesome/css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/dripicons.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/dripicons.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/slick.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'blog/fontawesome/css/all.min.css' %}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.css">
+    <!-- <link rel="stylesheet" href="{% static 'blog/css/dripicons.css' %}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <!-- <link rel="stylesheet" href="{% static 'blog/css/slick.css' %}"> -->
     <link rel="stylesheet" href="{% static 'blog/css/default.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/meanmenu.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
@@ -35,13 +39,13 @@
   <body>
     <!-- header -->
     <header class="header-area in-header">
-      <div class="menu-area menu-area2">
+      <div class="menu-area menu-area2" style="background-image: url({% static 'blog/img/bg/header-bg.jpg' %})">
         <div class="container">
           <div class="second-menu">
             <div class="row align-items-center">
               <div class="col-xl-2 col-lg-2">
                 <div class="logo2">
-                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/argi_logo_l.svg' %}" alt="logo"></a>
+                  <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/l-argi.svg' %}" alt="logo"></a>
                 </div>
               </div>
               <div class="col-xl-10 col-lg-10">
@@ -49,8 +53,6 @@
                   <nav id="mobile-menu">
                     <ul>
                       <li><a href="{% url 'blog:index' %}">首页</a></li>
-                      <!-- <li><a href="{% url 'blog:blog' %}">洞察</a></li>
-                      <li><a href="{% url 'blog:blog' %}">资源</a></li> -->
                       {% for channel in channel_list %}
                         <li>
                           <a href="{% url 'blog:channel' channel.pk %}">{{ channel.name }}</a>
@@ -60,7 +62,6 @@
                       {% endfor %}
                       <li><a href="{% url 'blog:about' %}">关于</a></li>
                       </li>
-                                            
                     </ul>
                   </nav>
                 </div>
@@ -105,14 +106,85 @@
     <!-- main-area-end -->
 
     <!-- footer -->
-    <footer class="footer-bg footer-p pt-50" >
+    <footer class="footer-bg footer-p pt-90">
       <div class="footer-top pb-50">
         <div class="container">
-          <div class="row align-items-center text-center">
-            <div class="col-12">                  
-              <p>Copyright &copy; 2021. 昂奇数创™ 版权所有，文章转载请联系 grittang@gmail.com</p>
-              <p><span>本站由 </span><a href="https://www.upyun.com/"><img src="{% static 'blog/img/footer/f-upayun.png' %}" alter='又拍云'></a><span></span> 提供 CDN 加速/云存储服务</span></p>
-              <p><a class="icp" href="https://beian.miit.gov.cn/#/Integrated/recordQuery" style="color: #ffff;"> 浙ICP备2021015348号-1 </a><img src="{% static 'blog/img/footer/f-beian.png' %}" width="22" height="22"><a class="icp" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006577"> 浙公网安备33010502006577号</a></p>
+          <div class="row justify-content-between">
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+              <div class="footer-widget mb-30">
+                <div class="flog mb-35">
+                  <span class="footer-logo transition-img">
+                    <a href="{% url 'blog:index' %}"><img src="{% static 'blog/img/logo/l-argi.svg' %}" alt="argi365 logo" /></a>
+                    <a href="mailto:grittang@gmail.com" class="share-logo"></a>
+                  </span>
+                </div>
+                <div class="footer-widget mb-30">
+                  <div class="footer-text mb-20">
+                    <p>一个深度原创的科技智库，专注于地产、建筑和泛家居行业的数字化转型和创新，并提供开阔的跨学科视角</p>
+                  </div>
+                  <div class="footer-social">
+                    <a href="mailto:grittang@gmail.com"><i class="fa fa-envelope"></i></a>
+                    <a class="share-wechat">
+                      <i class="fab fa-weixin"></i>
+                      <span class="qr-code"><img src="{% static 'blog/img/bg/wechat-qr-code.png' %}"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-xl-2 col-lg-2 col-sm-6">
+              <div class="footer-widget mb-30">
+                <div class="f-widget-title">
+                  <h5>目录</h5>
+                </div>
+                <div class="footer-link">
+                  <ul>
+                    <li><a href="{% url 'blog:index' %}">首页</a></li>
+                    {% for channel in channel_list %}
+                    <li>
+                      <a href="{% url 'blog:channel' channel.pk %}">{{ channel.name }}</a>
+                    </li>
+                    {% empty %}
+                      <div>No channel yet.</div>
+                    {% endfor %}
+                    <li><a href="{% url 'blog:about' %}">关于</a></li>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-sm-6">
+              <div class="footer-widget mb-30">
+                <div class="f-widget-title">
+                  <h5>标签</h5>
+                </div>
+                <div class="footer-link">
+                  <ul>
+                    {% for tag in tag_list %}
+                    <li>
+                      <a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}</a>
+                    </li>
+                    {% empty %}
+                      <div>No tag yet.</div>
+                    {% endfor %}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+              <div class="footer-widget mb-30">
+                <div class="footer-copyright col-12 mb-30">
+                  <p>Copyright &copy; 2021. <a href="{% url 'blog:index' %}">「昂奇数创」</a>All Rights Reserved. Powered by Grit. 本站内容皆为原创，转载请注明来源，商业媒体及纸媒请先联系：<a href="mailto:grittang@gmail.com">grittang@gmail.com</a><br>部分引用内容若涉及侵权，请联系本人删除</p>
+                </div>
+                <div class="footer-copyright icp col-12 mt-30">
+                  <p><span>本站由 </span><a href="https://www.upyun.com/"><img src="{% static 'blog/img/logo/l-upyun.svg' %}" alter="又拍云" height="18"></a><span></span> 提供 CDN 加速/云存储服务</span>
+                  <br><a href="https://beian.miit.gov.cn/#/Integrated/recordQuery"> 浙ICP备2021015348号-1</a> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006577">浙公网安备33010502006577号</a></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -121,16 +193,17 @@
     <!-- footer-end -->
 
     <!-- JS here -->
-    <script src="{% static 'blog/js/vendor/modernizr-3.5.0.min.js' %}"></script>
-    <!-- <script src="{% static 'blog/js/vendor/jquery-1.12.4.min.js' %}"></script> -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{% static 'blog/js/popper.min.js' %}"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="{% static 'blog/js/one-page-nav-min.js' %}"></script>
     <script src="{% static 'blog/js/jquery.meanmenu.min.js' %}"></script>
-    <script src="{% static 'blog/js/slick.min.js' %}"></script>
+    <!-- <script src="{% static 'blog/js/slick.min.js' %}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="{% static 'blog/js/ajax-form.js' %}"></script>
-    <script src="{% static 'blog/js/paroller.js' %}"></script>
+    <!-- <script src="{% static 'blog/js/paroller.js' %}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paroller.js/1.4.7/jquery.paroller.min.js"></script>
     <script src="{% static 'blog/js/wow.min.js' %}"></script>
     <script src="{% static 'blog/js/js_isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'blog/js/imagesloaded.min.js' %}"></script>
@@ -142,8 +215,9 @@
     <script src="{% static 'blog/js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'blog/js/element-in-view.js' %}"></script>
     <script src="{% static 'blog/js/main.js' %}"></script>
-    <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
-    <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
       hljs.initLineNumbersOnLoad();

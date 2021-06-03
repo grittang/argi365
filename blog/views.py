@@ -15,6 +15,13 @@ class BaseView(ListView):
   template_name = 'base.html'
   context_object_name = 'channel_list'
 
+  def get_context_data(self, **kwargs):
+    context = super(BaseView, self).get_context_data(**kwargs)
+    # django filter pk in list
+    context['tag_list'] = Tag.objects.filter(pk__in=[1, 6, 15, 17, 22])
+    return context
+
+
 class IndexView(BaseView):
   template_name = 'blog/index.html'
 
@@ -48,7 +55,7 @@ class ChannelView(BlogView):
     return context
 
 
-class CategoryView(ChannelView):
+class CategoryView(BlogView):
   def get_context_data(self, **kwargs):
     context = super(CategoryView, self).get_context_data(**kwargs)
     queried_category = get_object_or_404(Category, pk=self.kwargs.get('pk'))
@@ -57,11 +64,12 @@ class CategoryView(ChannelView):
     return context
 
 
-class TagView(ChannelView):
+class TagView(BlogView):
   def get_context_data(self, **kwargs):
     context = super(TagView, self).get_context_data(**kwargs)
-    queried_tags = get_object_or_404(Tag, pk=self.kwargs.get('pk'))
-    context['post_list'] = Post.objects.filter(tags=queried_tags)
+    queried_tag = get_object_or_404(Tag, pk=self.kwargs.get('pk'))
+    context['post_list'] = Post.objects.filter(tags=queried_tag)
+    context['tag'] = queried_tag
     return context
 
 class PostDetailView(DetailView):
@@ -97,20 +105,3 @@ class PostDetailView(DetailView):
 
 class AboutView(BlogView):
   template_name = 'blog/about.html'
-
-
-def posts_create(request, category_id):
-  category = Category.objects.get(pk=category_id)
-
-  if request.method != 'POST':
-    form = PostForm()
-  else:
-    form = PostForm(data=request.POST)
-    if form.is_valid():
-      new_post = form.save(commit=False)
-      new_post.category = category
-      new_post.save()
-      return redirect('blog:category', category_id=category_id)
-
-  context = {'category':category, 'form':form}
-  return render(request, 'blog/posts_create.html', context)

@@ -107,10 +107,11 @@ button:focus,input:focus,input:focus,textarea,textarea:focus{outline: none;box-s
 	text-transform: capitalize;
 }
 .per-text h2 {
-    font-size: 120px;
+    font-size: 90px;
     /* color: #FF8A26; */
-    opacity: .04;
+    opacity: .06;
     text-align: right;
+    line-height: 150%;
 }
 
 .per-text h2 span{
@@ -229,9 +230,7 @@ label {
     line-height: 115px;
     padding: 0 10px;
 }
-/* .logo img,.logo2 img,.logo3 img {
-    width: 50%;
-} */
+
 /* button style */
 
 .btn {
@@ -998,7 +997,7 @@ display: none;
 }
 .s-slider-content h2{margin-bottom: 25px;margin-top: 120px;padding-right: 60px;}
 .s-slider-content p {
-	font-size: 16px;
+	font-size: 15px;
 	padding-right: 60px;
 }
 .header-img {
@@ -1608,12 +1607,6 @@ transition: all ease 0.6s;
     position: absolute;
     left: 42%;
     top: 35%;
-}
-.video h2{
-    color: #fff;
-}
-.video p{
-    color: #fff;
 }
 .video .parolx-text-left{
     color: #A08BFF;
@@ -2548,19 +2541,22 @@ box-shadow: 1px 3px 11px #00000026;
     bottom: 10px;
     right: 10px;
 }
-.blog-thumb .ct-link a{
-    background: #FF8A26 0% 0% no-repeat padding-box;
-border-radius: 5px;
+.blog-thumb .ct-link a {
+    background: #19AA4B 0% 0% no-repeat padding-box;
+  border-radius: 5px;
     color: #fff;
     padding: 5px 10px;
+}
+.blog-thumb .ct-link a:hover {
+  background-color: #FF8A26;
 }
 .single-post-box{
     padding: 30px;
     border-radius: 10px;
 }
 .single-post-box:hover,.single-post-box.active{
-     background: #FFFFFF 0% 0% no-repeat padding-box;
-box-shadow: 3px 4px 15px #00000026;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 3px 4px 15px #00000026;
 }
 .blog-content {
 	padding: 30px 0px 0;
@@ -2587,7 +2583,7 @@ box-shadow: 3px 4px 15px #00000026;
 	line-height: 1.5;
     letter-spacing: 1px;
 }
-.blog-content h4:hover a{color: #19AA4B;}
+.blog-content h4:hover a{color: #FF8A26;}
 
 
 .blog-btn a {
@@ -2595,6 +2591,9 @@ box-shadow: 3px 4px 15px #00000026;
     color: #19AA4B;
     line-height: 50px;
     text-align: center;
+}
+.blog-btn a:hover {
+  color: #FF8A26;
 }
 .blog-btn a i {
     margin-left: 5px;
@@ -2993,7 +2992,7 @@ overflow: hidden;
 .post__tag ul li a {
 	font-size: 14px;
 	text-transform: uppercase;
-	border: 2px solid #e5e5e5;
+	border: 1px solid #6d6d6d;
 	padding: 12px 18px;
 	font-weight: 500;
 	display: inline-block;
@@ -3575,34 +3574,35 @@ border-radius: 30px;
 }
 .footer-social a {
 	font-size: 14px;
-display: inline-block;
-margin-left: 5px;
-height: 35px;
-width: 35px;
-background: #ffffff30;
-text-align: center;
-line-height: 35px;
-border-radius: 50%;
-color: #fff;
+  display: inline-block;
+  margin-left: 5px;
+  height: 35px;
+  width: 35px;
+  background: #ffffff30;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  color: #fff;
 }
 .footer-social a:hover{color: #fff;background: #FF8A26 0% 0% no-repeat padding-box;
 box-shadow: 3px 4px 15px #00000026;}
 .f-widget-title h5 {
-	color: #fff;
+	color: #6d6d6d;
 	font-size: 20px;
 	margin-bottom: 30px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	position: relative;
 }
 
 .f-widget-title h5::before {
 content: "";
 position: absolute;
+margin-top: 2px;
 left: 0;
 bottom: 0;
-height: 3px;
-width: 60px;
-background: #FF8A26;
+height: 1px;
+width: 30px;
+background: #6d6d6d;
 }
 .footer-link ul li i {
     color: #f3525a;
@@ -3614,7 +3614,7 @@ background: #FF8A26;
 	font-size: 14px;
 	display: inline-block;
 }
-.footer-link ul li a:hover{padding-left: 5px;color: #f3525a;}
+.footer-link ul li a:hover{padding-left: 5px;color: #FF8A26;}
 .footer-link ul li {
 	margin-bottom: 10px;
 }
