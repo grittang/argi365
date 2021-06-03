@@ -66,6 +66,9 @@
   .slider-content-channel p {
     margin: 30px 60px 0 60px!important;
   }
+  .footer-widget {
+    margin-top: 50px;
+  }
 }
 
 @media only screen and (min-width: 767px) and (max-width: 990px) {
@@ -211,7 +214,9 @@
   .cat__list li, .widget__tag ul li a {
     margin: 0 5px 10px 0;
   }
-  
+  .footer-copyright {
+    margin-top: 35px;
+  }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 650px) {
@@ -228,6 +233,7 @@
   .mean-container a.meanmenu-reveal {
     margin-top: -50px;
   }
+  
 }
 
 @media only screen and (max-width: 480px) {

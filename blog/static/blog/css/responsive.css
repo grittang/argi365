@@ -259,9 +259,9 @@
         .services-area .col-lg-6:nth-child(1),.services-area .col-lg-6:nth-child(2),.services-area .col-lg-6:nth-child(3), .services-area .col-lg-6:nth-child(4) {
     margin-top: 30px;
 }
-    .video {
+    /* .video {
         padding: 120px 0;
-    }
+    } */
     .video-i.popup-video {
     position: absolute;
     left: 30%;
@@ -588,10 +588,7 @@
     right: 5%;
     top: 60px;
 }
-    .video {
-    padding-top: 120px;
-    padding-bottom: 120px;
-}
+  
     .services-area .col-lg-6:nth-child(1),.services-area .col-lg-6:nth-child(2),.services-area .col-lg-6:nth-child(3), .services-area .col-lg-6:nth-child(4) {
     margin-top: 30px;
 }
