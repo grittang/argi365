@@ -299,6 +299,9 @@
   --main-8: #106D30;
   --main-9: #0C4E23;
   --main-10: #073015;
+
+  /* UX 变换色 */
+  --act-1: #FF8A26;
 }
 
 html {
@@ -366,15 +369,14 @@ html {
 #write a {
   padding: 0 2px;
   font-weight: 500;
-  color: var(--main-6);
+  color: var(--mid-10);
   text-decoration: none;
 }
 
 /* 链接 */
 #write a {
-  color: var(--main-6);
   text-decoration: none;
-  border-bottom: 1px solid var(--main-6);
+  border-bottom: 1px solid var(--mid-10);
 }
 
 /* 链接内容为空时直接啥也不显示，比如锚点的地方 */
@@ -391,8 +393,8 @@ html {
 }
 
 #write a:hover {
-  color: var(--main-7);
-  border-bottom: 2px solid var(--main-6);
+  color: var(--act-1);
+  border-bottom: 1px solid var(--act-1);
 }
 
 #write h6 {
@@ -445,9 +447,9 @@ html {
   background:
     linear-gradient(
       90deg, 
-      #FF8A26 0%,
-      #19AA4B 50%,
-      #FF8A26 100%
+      var(--act-1) 0%,
+      var(--primary-color) 50%,
+      var(--act-1) 100%
     )
     left 
     bottom
@@ -595,7 +597,7 @@ ol:last-child {
 } */
 
 #write h2:hover {
-  color: #FF8A26;
+  color: var(--act-1);
   font-weight: bold;
 }
 
@@ -1162,3 +1164,15 @@ li > ol, li > ul {
 }
 
 /* ----------------- CSS 自定义 ------------------- */
+#write figcaption {
+  text-align: right;
+  font-size: 12px;
+  color: #8c8c8c;
+  margin: -30px 3px 30px 0;
+  letter-spacing: .01em;
+  font-style: oblique;
+}
+#write figcaption::before {
+  content: '\2713';
+  margin-right: 5px;
+}

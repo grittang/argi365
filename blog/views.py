@@ -74,7 +74,7 @@ class TagView(BlogView):
 
 class PostDetailView(DetailView):
   model = Post
-  template_name = 'blog/detail.html'
+  template_name = 'blog/post_detail.html'
   context_object_name = 'post'
 
   def get(self, request, *args, **kwargs):
@@ -86,6 +86,8 @@ class PostDetailView(DetailView):
     # 将 channel listview 嵌入 post detailview，是导航栏正常显示
     # https://stackoverflow.com/questions/41287431/django-combine-detailview-and-listview
     context = super(PostDetailView, self).get_context_data(**kwargs)
+    # django filter pk in list
+    context['tag_list'] = Tag.objects.filter(pk__in=[1, 6, 15, 17, 22])
     context['channel_list'] = Channel.objects.all()
     return context
 

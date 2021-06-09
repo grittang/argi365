@@ -9,8 +9,8 @@
   <div class="container">
 
     <!-- post-header -->
-    <div class="row pt-120 mb-30">
-      <div class="col-xl-12 col-lg-8 mt-30">
+    <div class="row pt-80 mb-30">
+      <div class="col-xl-12 col-lg-8">
         <div class="breadcrumb-wrap text-center">
           <div class="breadcrumb-title mb-30">
             <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
@@ -30,7 +30,7 @@
     <!-- post-header-end -->
 
     <!-- post-body -->
-    <div class="row-body row-body-content pt-120">
+    <div class="row-body row-body-content pt-60">
       <div class="col-lg-4 sticky ">
         <aside>
           {% if post.toc %}
@@ -60,7 +60,7 @@
             </div>
             <div id="eof"><p> EOF </p></div>
             <div>
-              <div class="post__tag">
+              <div class="post__tag mt-50">
                 {% if post.tags.all %}
                 <ul>
                   {% for tag in post.tags.all %}

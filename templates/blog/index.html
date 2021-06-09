@@ -165,11 +165,11 @@
       <div class="col-lg-4 col-md-12">
         <div class="single-post single-post-box active mb-30">
           <div class="blog-thumb">
-            <a href="blog-details.html">
+            <a href="{% url 'blog:post_detail' 10 %}">
               <img src="{% static 'blog/img/blog/blog_img01.jpg' %}" alt="img">
             </a>
             <div class="ct-link">
-              <a href="#">创新</a>
+              <a href="{% url 'blog:category' 5 %}">创新</a>
             </div>
           </div>
           <div class="blog-content">
@@ -183,9 +183,9 @@
                 </div>
               </div>
             </div>
-            <h4><a href="{% url 'blog:detail' 10 %}">成长乃是败于越来越强大之物——兼谈对失败的复盘</a></h4>
+            <h4><a href="{% url 'blog:post_detail' 10 %}">成长乃是败于越来越强大之物——兼谈对失败的复盘</a></h4>
             <p>在书籍的扉页，周航放了一首里尔克的诗《观看的男人》，里面有一句“我们战胜的，都是渺小的，结果本身也使我们渺小……胜利不会对他发出邀请。他的成长乃是：成为卑贱的战败者，败于越来越强大之物。”</p>
-            <div class="blog-btn"><a href="{% url 'blog:detail' 10 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
+            <div class="blog-btn"><a href="{% url 'blog:post_detail' 10 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
 
           </div>
 
@@ -195,11 +195,11 @@
       <div class="col-lg-4 col-md-12">
         <div class="single-post single-post-box active mb-30">
           <div class="blog-thumb">
-            <a href="blog-details.html">
+            <a href="{% url 'blog:post_detail' 16 %}">
               <img src="{% static 'blog/img/blog/blog_img02.jpg' %}" alt="img">
             </a>
             <div class="ct-link">
-              <a href="{% url 'blog:detail' 16 %}">创新</a>
+              <a href="{% url 'blog:category' 5 %}">创新</a>
             </div>
           </div>
           <div class="blog-content">
@@ -213,9 +213,9 @@
                 </div>
               </div>
             </div>
-            <h4><a href="{% url 'blog:detail' 16 %}">成为史蒂夫·乔布斯：如何跃迁为创新者</a></h4>
+            <h4><a href="{% url 'blog:post_detail' 16 %}">成为史蒂夫·乔布斯：如何跃迁为创新者</a></h4>
             <p>创造力正是 Clayton Christensen 在完成对 25 位商界领袖和大约 3000 名创新人士的调研后，得出的答案。这项研究成果形成了《创新者的基因》这本书，它关注的是商业语境中个体的创造力。</p>
-            <div class="blog-btn"><a href="{% url 'blog:detail' 16 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
+            <div class="blog-btn"><a href="{% url 'blog:post_detail' 16 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
           </div>
 
 
@@ -224,11 +224,11 @@
       <div class="col-lg-4 col-md-12">
         <div class="single-post single-post-box active mb-30">
           <div class="blog-thumb">
-            <a href="blog-details.html">
+            <a href="{% url 'blog:post_detail' 8 %}">
               <img src="{% static 'blog/img/blog/blog_img03.jpg' %}" alt="img">
             </a>
             <div class="ct-link">
-              <a href="{% url 'blog:detail' 8 %}">产品</a>
+              <a href="{% url 'blog:category' 3 %}">产品</a>
             </div>
           </div>
           <div class="blog-content">
@@ -242,9 +242,9 @@
                 </div>
               </div>
             </div>
-            <h4><a href="{% url 'blog:detail' 8 %}">不懂信息架构 (IA)，枉谈网站和软件设计</a></h4>
+            <h4><a href="{% url 'blog:post_detail' 8 %}">不懂信息架构 (IA)，枉谈网站和软件设计</a></h4>
             <p>本质上，IA 是信息大爆炸和社会分工进一步细化的产物。身处越来越庞杂的信息时代，每个人都面临的信息过载问题，迫使我们在尽可能短的时间内，准确地抽取目标信息，这就要求网站或应用程序高效地存储和呈现信息。</p>
-            <div class="blog-btn"><a href="{% url 'blog:detail' 8 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
+            <div class="blog-btn"><a href="{% url 'blog:post_detail' 8 %}">查看详情<i class="fas fa-chevron-right"></i></a></div>
           </div>
 
         </div>
