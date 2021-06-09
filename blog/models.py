@@ -58,7 +58,7 @@ class Post(models.Model):
   avatar = models.URLField('标题图', max_length=400, blank=True)
 
   # 可以没有文章摘要，但默认情况下 CharField 要求我们必须存入数据，否则就会报错。
-  excerpt = models.CharField('摘要', max_length=250, blank=True)
+  excerpt = models.CharField('摘要', max_length=300, blank=True)
 
   # 我们规定一篇文章只能对应一个分类，但是一个分类下可以有多篇文章
   category = models.ForeignKey(Category, verbose_name='类别', on_delete=models.CASCADE, blank=False)
