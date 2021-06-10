@@ -66,8 +66,8 @@ tr:nth-child(even) {
   margin: 50px 220px 0;
 }
 .breadcrumb-title h2 a {
-  letter-spacing: 3px;
-  line-height: 5vw;
+  letter-spacing: 0.02em;
+  line-height: 1.5em;
 }
 .breadcrumb-title:hover {
   color: var(--act-1);
@@ -430,6 +430,22 @@ span.qr-code {
   display: block;
 }
 
+/* CODE BLOCK */
+.hljs-ln-code {
+  border-bottom: 0;
+  min-width: initial;
+}
+.codehilite tr,
+.codehilite td {
+  background-color: initial;
+  min-width: initial;
+}
+.codehilite span::selection {
+  color: #19AA4B;
+}
+.hljs-ln-n:before {
+  content: none!important;
+}
 
 /* --- OTHERS --- */
 .single-post-box:hover, .single-post-box.active:hover {

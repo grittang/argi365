@@ -732,7 +732,7 @@ thead {
 }
 
 /* 代码块 */
-#write .md-fences {
+/* #write .md-fences {
   margin: 1.8rem 0 2rem !important;
   font-family: Roboto Mono, Source Sans Pro, 'Microsoft YaHei', '微软雅黑' !important;
   font-size: 0.9rem;
@@ -765,6 +765,10 @@ tt {
 #write .md-footnote {
   color: var(--main-5);
   background-color: var(--main-1);
+} */
+
+#write .codehilite pre {
+  background-color: #272822;
 }
 
 /* 流程图块 */
