@@ -17,7 +17,6 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #ffffff;
 }
 
-.transition-img img,
 .transition-img img {
   /* https://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over */
   transition: filter .5s ease-in-out;
@@ -337,10 +336,26 @@ blockquote {
   background-color: #FBFFFA;
   border: none;
 }
+.bsingle__content h2 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
 .bsingle__post:hover, .widget:hover {
   /* border: 1px solid #6d6d6d; */
   background: #FBFFFA 0% 0% no-repeat padding-box;
   box-shadow: 3px 4px 15px #00000026;
+}
+/* https://teamtreehouse.com/community/how-to-select-a-img-title-attribute-in-css */
+.details__content p img[alt="gray"] {
+  transition: filter .5s ease-in-out;
+  -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(95%); /* FF 35+ */
+}
+.details__content p img[alt="gray"]:hover,
+.details__content p img[alt="gray"]:focus {
+  filter: grayscale(0%); /* FF 35+ */
+  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
 }
 #eof p {
   font-size: 12px;
@@ -356,12 +371,6 @@ blockquote {
     font-weight: 500;
 }
 
-.bsingle__content h2 {
-  margin-top: 10px;
-  margin-bottom: 30px;
-  line-height: 1.5;
-}
-.
 .post__tag {
   display: flex;
   justify-content: start;
